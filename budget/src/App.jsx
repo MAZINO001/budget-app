@@ -1,7 +1,5 @@
 function App() {
-  <div className=" text-gray-950">
-hi this is mounit
-  </div>
+  <div className="text-white">hi this is mounir</div>;
 }
 
-export default App
+export default App;
