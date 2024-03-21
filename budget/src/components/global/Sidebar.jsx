@@ -6,14 +6,29 @@ import { MdHomeFilled } from "react-icons/md";
 import { GiWallet } from "react-icons/gi";
 export default function Sidebar() {
   return (
-    <div className=" w-[10vw] h-[100vh] flex flex-col justify-between items-center">
+    <div className=" w-[10vw] h-[100vh] flex flex-col justify-between items-center bg-gray-500 mr-4">
       <GiWallet className="text-3xl mt-2 cursor-pointer" />
       <div className="flex flex-col justify-between h-[400px]  text-2xl cursor-pointer mb-16">
-        <MdHomeFilled className="" />
-        <MdOutlineAddBox className="" />
-        <MdHistory className="" />
-        <IoMdCalendar className="" />
-      <IoMdSettings className="" />
+        <div className="flex items-center gap-2">
+          <MdHomeFilled />
+          <span className="text-sm ">Dashboard</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <MdOutlineAddBox />
+          <span className="text-sm">Add New</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <MdHistory />
+          <span className="text-sm">History</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <IoMdCalendar />
+          <span className="text-sm">Calendar</span>
+        </div>
+        <div className="flex items-center gap-2">
+          <IoMdSettings />
+          <span className="text-sm">Settings</span>
+        </div>
       </div>
     </div>
   );
