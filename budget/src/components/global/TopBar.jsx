@@ -7,10 +7,8 @@ export default function TopBar() {
       <div className="w-[200px] h-[30px] bg-gray-500 text-center rounded-md">
         latest transacions
       </div>
-      <div className="flex items-center gap-4 mr-2">
-        {/* <div className="w-[100px] h-[30px] bg-gray-500 pl-4 rounded-md"> */}
-        <div className="">
-          {/* Range */}
+      <div className="flex items-center gap-4 mr-2 ">
+        <div className="w-[100px] h-[30px] pl-4  flex items-center gap-4">
           <DropdownMenu />
         </div>
         <GoBellFill className="text-2xl" />
