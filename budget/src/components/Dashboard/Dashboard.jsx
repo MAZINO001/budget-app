@@ -1,7 +1,7 @@
 export default function Dashboard() {
   return (
     // <div className="bg-red-500 w-[100vw] h-[100vh]">
-    <div className=" w-full h-[100vh] mt-4 ml-2">
+    <div className=" w-full h-[100vh] mt-2 ml-2">
       <div className="flex items-center gap-6 mb-6">
         <div className="">
           <div className="bg-red-500 w-[300px] h-[100px] rounded-md mb-6">
