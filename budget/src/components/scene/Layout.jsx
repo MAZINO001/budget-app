@@ -6,7 +6,7 @@ export default function Layout() {
   return (
     <div className="flex">
       <Sidebar />
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full mr-4 ml-4">
         <TopBar />
         <Dashboard />
       </div>

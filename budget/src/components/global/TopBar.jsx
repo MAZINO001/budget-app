@@ -3,7 +3,7 @@ import DropdownMenu from "./DropdownMenu";
 import avatar from "../../assets/avatar.jpg";
 export default function TopBar() {
   return (
-    <div className=" w-full h-[7vh] flex justify-between items-center mt-2 ml-2">
+    <div className=" w-full h-[7vh] flex justify-between items-center mt-2">
       <div className="w-[200px] h-[30px] bg-gray-500 text-center rounded-md">
         latest transacions
       </div>
