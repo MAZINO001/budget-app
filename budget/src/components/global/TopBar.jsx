@@ -3,12 +3,12 @@ import DropdownMenu from "./DropdownMenu";
 import avatar from "../../assets/avatar.jpg";
 export default function TopBar() {
   return (
-    <div className=" w-full h-[50px] flex justify-between items-center bg-green-500">
+    <div className=" w-full h-[50px] flex justify-between items-center ">
       <div className="w-[150px] h-[35px] bg-red-500 flex items-center justify-center rounded-md">
         latest transacions
       </div>
       <div className="flex items-center gap-4 ">
-        <div className="w-[80px] h-[30px] pl-4  flex items-center gap-4 bg-red-500 rounded-md">
+        <div className="w-[80px] h-[35px] pl-4  flex items-center gap-4 bg-red-500 rounded-md">
           <DropdownMenu />
         </div>
         <GoBellFill className="text-2xl cursor-pointer" />
