@@ -7,7 +7,7 @@ export default function Layout() {
     <div className="flex md:flex-row flex-col">
       {/* <Sidebar /> */}
       <div className="flex flex-col w-full mx-2">
-        <TopBar />
+        {/* <TopBar /> */}
         <Dashboard />
       </div>
     </div>
