@@ -4,7 +4,7 @@ import TopBar from "../global/TopBar";
 
 export default function Layout() {
   return (
-    <div className="flex">
+    <div className="flex ">
       <Sidebar />
       <div className="flex flex-col w-full mr-2 ml-2">
         <TopBar />
