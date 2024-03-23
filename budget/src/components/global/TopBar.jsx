@@ -4,7 +4,7 @@ import avatar from "../../assets/avatar.jpg";
 export default function TopBar() {
   return (
     <div className=" w-full h-[50px] flex justify-between items-center">
-      <div className="w-[200px] h-[35px] bg-red-500 flex items-center justify-center rounded-md">
+      <div className="w-[40%] h-[35px] bg-red-500 flex items-center justify-center rounded-md">
         latest transacions
       </div>
       <div className="flex items-center gap-4 mr-2 ">
