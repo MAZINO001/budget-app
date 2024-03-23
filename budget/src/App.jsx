@@ -2,7 +2,7 @@ import Layout from "./components/scene/Layout";
 
 function App() {
   return (
-    <div className="App text-white">
+    <div className="App text-white ">
       <Layout />
     </div>
   );

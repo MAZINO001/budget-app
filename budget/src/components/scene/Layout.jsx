@@ -5,8 +5,8 @@ import TopBar from "../global/TopBar";
 export default function Layout() {
   return (
     <div className="flex md:flex-row flex-col">
-      <Sidebar />
-      <div className="flex flex-col w-full mr-2 ml-2">
+      {/* <Sidebar /> */}
+      <div className="flex flex-col w-full mx-2">
         <TopBar />
         <Dashboard />
       </div>
