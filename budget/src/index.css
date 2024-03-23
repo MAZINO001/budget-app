@@ -6,5 +6,6 @@
 *{
     background-color: black;
     color: white;
-    overflow: auto;
+    /* overflow-x: hidden; */
+    /* overflow-y: auto; */
 }
