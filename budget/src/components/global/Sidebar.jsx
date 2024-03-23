@@ -6,7 +6,7 @@ import { MdHomeFilled } from "react-icons/md";
 import { GiWallet } from "react-icons/gi";
 export default function Sidebar() {
   return (
-    <div className=" w-[150px] h-[100vh] flex flex-col justify-between items-center bg-gray-500">
+    <div className=" w-[150px] h-[100vh] flex flex-col justify-between items-center bg-gray-500 sm:bg-blue-500 md:bg-green-500 lg:bg-yellow-500">
       <GiWallet className="text-3xl mt-4 cursor-pointer" />
       <div className="flex flex-col justify-between h-[400px]  text-2xl cursor-pointer ">
         <div className="flex items-center gap-2">
