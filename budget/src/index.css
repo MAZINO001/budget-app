@@ -18,7 +18,8 @@
     right: 50%;
     transform: translateX(-50%);
     width: 80%;
-    height: 5%;
+    /* height: 10%; */
+    height: 35px;
     padding: 5px 20px;
     border-radius: 50px;
 }
