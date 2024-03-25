@@ -1,4 +1,4 @@
-import Dashboard from "../Dashboard/Dashboard";
+import { Outlet } from "react-router-dom";
 import Sidebar from "../global/Sidebar";
 import TopBar from "../global/TopBar";
 
@@ -8,7 +8,7 @@ export default function Layout() {
       <Sidebar />
       <div className="flex flex-col w-full">
         <TopBar />
-        <Dashboard />
+        <Outlet />
       </div>
     </div>
   );
