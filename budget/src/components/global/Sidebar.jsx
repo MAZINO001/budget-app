@@ -114,7 +114,7 @@ export default function Sidebar() {
         <Link
           to="/addnew"
           className={`flex items-center gap-2 ${
-            location.pathname === "/addnew" ? "bg-red-500" : ""
+            location.pathname === "/addnew" ? "text-red-500" : ""
           }`}
         >
           <MdOutlineAddBox />
@@ -123,7 +123,7 @@ export default function Sidebar() {
         <Link
           to="/history"
           className={`flex items-center gap-2 ${
-            location.pathname === "/history" ? "bg-red-500" : ""
+            location.pathname === "/history" ? "text-red-500" : ""
           }`}
         >
           <MdHistory />
@@ -132,7 +132,7 @@ export default function Sidebar() {
         <Link
           to="/calendar"
           className={`flex items-center gap-2 ${
-            location.pathname === "/calendar" ? "bg-red-500" : ""
+            location.pathname === "/calendar" ? "text-red-500" : ""
           }`}
         >
           <IoMdCalendar />
@@ -143,7 +143,7 @@ export default function Sidebar() {
       <Link
         to="/settings"
         className={`flex items-center gap-2 text-3xl cursor-pointer md:mb-2 ${
-          location.pathname === "/settings" ? "bg-red-500" : ""
+          location.pathname === "/settings" ? "text-red-500" : ""
         }`}
       >
         <IoMdSettings />
