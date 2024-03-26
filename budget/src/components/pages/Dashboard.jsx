@@ -29,11 +29,14 @@
 //   );
 // }
 
+
 import { CreditCard1, CreditCard2 } from "../Dashboard/CreditCard";
 import History from "../Dashboard/History";
 import Popular from "../Dashboard/Popular";
 
 export default function Dashboard() {
+
+
   return (
     <div className="flex flex-col w-full md:mx-0 px-2 mb-2">
       <div className="flex items-center  md:gap-2 mb-2  flex-col  md:flex-row ">

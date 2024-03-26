@@ -15,7 +15,7 @@ const router = createBrowserRouter([
       { path: "/addnew", element: <AddNew /> },
       { path: "/history", element: <History /> },
       { path: "/calendar", element: <Calendar /> },
-      { path: "/dettings", element: <Settings /> },
+      { path: "/settings", element: <Settings /> },
     ],
   },
   {
