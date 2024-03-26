@@ -29,7 +29,7 @@
 //   );
 // }
 
-import RadraChart from "../Dashboard/Charts";
+import { ChartLines, ChartRadar } from "../Dashboard/Charts";
 import { CreditCard1, CreditCard2 } from "../Dashboard/CreditCard";
 import History from "../Dashboard/History";
 import Popular from "../Dashboard/Popular";
@@ -54,11 +54,11 @@ export default function Dashboard() {
         </div>
       </div>
       <div className="flex items-center md:flex-row flex-col gap-2 ">
-        <div className="bg-red-500 w-[100%] md:w-[50%] h-[290px] rounded-md max-w-[600px] md:max-w-none">
-          chart 1
+        <div className="bg-gray-700 w-[100%] md:w-[50%] h-[290px] rounded-md max-w-[600px] md:max-w-none">
+          <ChartRadar />
         </div>
-        <div className="bg-red-500 w-[100%] md:w-[50%] h-[290px] rounded-md max-w-[600px] md:max-w-none">
-          <RadraChart/>
+        <div className="bg-gray-700 w-[100%] md:w-[50%] h-[290px] rounded-md max-w-[600px] md:max-w-none">
+          <ChartLines />
         </div>
       </div>
     </div>

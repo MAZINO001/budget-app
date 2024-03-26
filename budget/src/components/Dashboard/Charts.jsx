@@ -1,16 +1,17 @@
-import React, { PureComponent } from "react";
+/* eslint-disable no-unused-vars */
+import React from "react";
 import {
   LineChart,
   Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
+  Radar,
+  RadarChart,
+  PolarGrid,
+  PolarAngleAxis,
+  PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
 
-const data = [
+const data1 = [
   {
     name: "Page A",
     uv: 4000,
@@ -55,14 +56,70 @@ const data = [
   },
 ];
 
-export default function RadraChart() {
-  //   static demoUrl = 'https://codesandbox.io/s/tiny-line-chart-r5z0f';
+const data2 = [
+  {
+    subject: "Math",
+    A: 120,
+    B: 110,
+    fullMark: 150,
+  },
+  {
+    subject: "Chinese",
+    A: 98,
+    B: 130,
+    fullMark: 150,
+  },
+  {
+    subject: "English",
+    A: 86,
+    B: 130,
+    fullMark: 150,
+  },
+  {
+    subject: "Geography",
+    A: 99,
+    B: 100,
+    fullMark: 150,
+  },
+  {
+    subject: "Physics",
+    A: 85,
+    B: 90,
+    fullMark: 150,
+  },
+  {
+    subject: "History",
+    A: 65,
+    B: 85,
+    fullMark: 150,
+  },
+];
 
+export function ChartLines() {
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <LineChart width={300} height={100} data={data}>
+      <LineChart width={300} height={100} data={data1}>
         <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
       </LineChart>
+    </ResponsiveContainer>
+  );
+}
+
+export function ChartRadar() {
+  return (
+    <ResponsiveContainer width="100%" height="100%">
+      <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data2}>
+        <PolarGrid />
+        <PolarAngleAxis dataKey="subject" />
+        <PolarRadiusAxis />
+        <Radar
+          name="Mike"
+          dataKey="A"
+          stroke="#8884d8"
+          fill="#8884d8"
+          fillOpacity={0.6}
+        />
+      </RadarChart>
     </ResponsiveContainer>
   );
 }
