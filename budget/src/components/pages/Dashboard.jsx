@@ -29,6 +29,7 @@
 //   );
 // }
 
+import RadarChart from "../Dashboard/Charts";
 import { CreditCard1, CreditCard2 } from "../Dashboard/CreditCard";
 import History from "../Dashboard/History";
 import Popular from "../Dashboard/Popular";
@@ -54,10 +55,10 @@ export default function Dashboard() {
       </div>
       <div className="flex items-center md:flex-row flex-col gap-2 ">
         <div className="bg-red-500 w-[100%] md:w-[50%] h-[290px] rounded-md max-w-[600px] md:max-w-none">
-          chart 1
+          <RadarChart/>
         </div>
         <div className="bg-red-500 w-[100%] md:w-[50%] h-[290px] rounded-md max-w-[600px] md:max-w-none">
-          chart 2
+        <RadarChart/>
         </div>
       </div>
     </div>
