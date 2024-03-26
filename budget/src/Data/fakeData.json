@@ -1,30 +1,30 @@
 [
     {
-      "Date": "2024-03-23",
+      "Date": "03-23",
       "Category": "Groceries",
       "Description": "Milk, Bread, Eggs ($5.25)",
       "Amount": 15.75
     },
     {
-      "Date": "2024-03-22",
+      "Date": "03-22",
       "Category": "Entertainment",
       "Description": "Movie Ticket (The New Guardians 3)",
       "Amount": 12.00
     },
     {
-      "Date": "2024-03-21",
+      "Date": "03-21",
       "Category": "Bills",
       "Description": "Electricity Bill",
       "Amount": 78.42
     },
     {
-      "Date": "2024-03-20",
+      "Date": "03-20",
       "Category": "Transportation",
       "Description": "Bus Fare (Monthly Pass)",
       "Amount": 60.00
     },
     {
-      "Date": "2024-03-19",
+      "Date": "03-19",
       "Category": "Dining",
       "Description": "Lunch at Cafe Evergreen",
       "Amount": 14.50
