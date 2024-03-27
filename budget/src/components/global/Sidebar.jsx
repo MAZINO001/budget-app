@@ -65,7 +65,7 @@
 import { MdOutlineAddBox } from "react-icons/md";
 import { IoMdSettings } from "react-icons/io";
 import { MdHistory } from "react-icons/md";
-import { IoMdCalendar } from "react-icons/io";
+import { LiaToolsSolid } from "react-icons/lia";
 import { MdHomeFilled } from "react-icons/md";
 import { GiWallet } from "react-icons/gi";
 import { useEffect, useState } from "react";
@@ -130,13 +130,13 @@ export default function Sidebar() {
           <span className="text-sm hidden lg:flex">History</span>
         </Link>
         <Link
-          to="/calendar"
+          to="/tools"
           className={`flex items-center gap-2 ${
-            location.pathname === "/calendar" ? "text-red-500" : ""
+            location.pathname === "/Tools" ? "text-red-500" : ""
           }`}
         >
-          <IoMdCalendar />
-          <span className="text-sm hidden lg:flex">Calendar</span>
+          <LiaToolsSolid  className="text-3xl" />
+          <span className="text-sm hidden lg:flex">Tools</span>
         </Link>
       </div>
 

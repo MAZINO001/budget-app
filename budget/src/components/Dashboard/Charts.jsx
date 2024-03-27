@@ -9,6 +9,9 @@ import {
   PolarAngleAxis,
   PolarRadiusAxis,
   ResponsiveContainer,
+  CartesianGrid,
+  XAxis,
+  YAxis,
 } from "recharts";
 
 const data1 = [
@@ -95,11 +98,21 @@ const data2 = [
   },
 ];
 
-export function ChartLines() {
+export function ChartLines(interval) {
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <LineChart width={300} height={100} data={data1}>
-        <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
+    <ResponsiveContainer height="100%" width="100%">
+      <LineChart data={data1} margin={{ right: 25, top: 10 }}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="name" interval={interval} />
+        <YAxis interval={interval} />
+        <Line
+          type="monotone"
+          dataKey="pv"
+          stroke="#8884d8"
+          strokeWidth={2}
+          activeDot={{ r: 8 }}
+        />
+        <Line type="monotone" dataKey="uv" stroke="#82ca9d"  strokeWidth={2}/>
       </LineChart>
     </ResponsiveContainer>
   );
@@ -123,3 +136,12 @@ export function ChartRadar() {
     </ResponsiveContainer>
   );
 }
+// export function ChartLines() {
+//   return (
+//     <ResponsiveContainer width="100%" height="100%">
+//       <LineChart width={300} height={100} data={data1}>
+//         <Line type="monotone" dataKey="pv" stroke="#8884d8" strokeWidth={2} />
+//       </LineChart>
+//     </ResponsiveContainer>
+//   );
+// }

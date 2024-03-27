@@ -3,7 +3,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Dashboard from "./components/pages/Dashboard";
 import AddNew from "./components/pages/AddNew";
 import History from "./components/pages/History";
-import Calendar from "./components/pages/Calendar";
+import Tools from "./components/pages/Tools";
 import Settings from "./components/pages/Settings";
 import ErrorPage from "./components/global/ErrorPage";
 const router = createBrowserRouter([
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
       { path: "/", element: <Dashboard /> },
       { path: "/addnew", element: <AddNew /> },
       { path: "/history", element: <History /> },
-      { path: "/calendar", element: <Calendar /> },
+      { path: "/tools", element: <Tools /> },
       { path: "/settings", element: <Settings /> },
     ],
   },
