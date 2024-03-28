@@ -17,11 +17,11 @@ export function CreditCard1() {
         <h3 className="text-md mb-1 ">Amount : </h3>
         <span className="text-3xl tracking-widest">3500$</span>
       </div>
-      <div className="absolute bottom-2 text-md left-2 tracking-widest">
+      <div className="absolute bottom-2 text-sm  md:text-md left-2 ">
         <span>4642 3489 9867 7632</span>
       </div>
       <div>
-        <p className="absolute bottom-2 right-2">11/15</p>
+        <p className="absolute bottom-2 right-2 md:text-md text-sm">11/15</p>
       </div>
     </div>
   );
@@ -45,11 +45,11 @@ export function CreditCard2() {
         <h3 className="text-md mb-1 ">Amount : </h3>
         <span className="text-3xl tracking-widest">3500$</span>
       </div>
-      <div className="absolute bottom-2 text-md left-2 tracking-widest">
+      <div className="absolute bottom-2 text-sm left-2 md:text-md">
         <span>4642 3489 9867 7632</span>
       </div>
       <div>
-        <p className="absolute bottom-2 right-2">11/15</p>
+        <p className="absolute bottom-2 right-2 text-sm md:text-md">11/15</p>
       </div>
     </div>
   );
