@@ -152,7 +152,7 @@ export function ChartLines(interval) {
   return (
     <ResponsiveContainer height="100%" width="100%">
       <LineChart data={data1} margin={{ right: 25, top: 10 }}>
-        <CartesianGrid strokeDasharray="3 3" />
+        {/* <CartesianGrid strokeDasharray="3 3" /> */}
         <XAxis dataKey="name" interval={interval} />
         <YAxis interval={interval} />
         <Line
@@ -172,9 +172,9 @@ export function ChartRadar() {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data2}>
-        <PolarGrid />
+        <PolarGrid  />
         <PolarAngleAxis dataKey="subject" />
-        <PolarRadiusAxis />
+        {/* <PolarRadiusAxis /> */}
         <Radar
           name="Mike"
           dataKey="A"
@@ -200,7 +200,7 @@ export function ChartBars() {
             bottom: 5,
           }}
         >
-          <CartesianGrid strokeDasharray="3 3" />
+          {/* <CartesianGrid strokeDasharray="3 3" /> */}
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
