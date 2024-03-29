@@ -1,5 +1,4 @@
 import { GoBellFill } from "react-icons/go";
-import DropdownMenu from "./PreBuildComp";
 import avatar from "../../assets/avatar.jpg";
 export default function TopBar() {
   return (
@@ -9,7 +8,7 @@ export default function TopBar() {
       </div>
       <div className="flex items-center gap-4 ">
         <div className="w-[80px] h-[35px] pl-4  flex items-center gap-4 bg-gray-700 rounded-md">
-          <DropdownMenu />
+          range
         </div>
         <GoBellFill className="text-2xl cursor-pointer" />
         <img
