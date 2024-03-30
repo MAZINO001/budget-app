@@ -23,6 +23,7 @@ const router = createBrowserRouter([
     element: <ErrorPage />,
   },
 ]);
+
 function App() {
   return (
     <div className="App bg-black ">
