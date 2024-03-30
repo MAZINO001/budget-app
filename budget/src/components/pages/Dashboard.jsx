@@ -29,7 +29,8 @@
 //   );
 // }
 
-import ApexChart from "../Dashboard/Charts";
+import { RadarApexChart, LineApexChart } from "../Dashboard/Charts";
+// import { RadarApexChart } from "../Dashboard/Charts";
 import { CreditCard1, CreditCard2 } from "../Dashboard/CreditCard";
 import History from "../Dashboard/History";
 import Popular from "../Dashboard/Popular";
@@ -54,10 +55,13 @@ export default function Dashboard() {
         </div>
       </div>
       <div className="flex items-center md:flex-row flex-col gap-2 ">
-        <div className="bg-gray-700 w-[100%] md:w-[50%] h-[290px] rounded-md max-w-[600px] md:max-w-none">
-          <ApexChart/>
+        <div className="bg-white w-[100%] md:w-[50%] h-[290px] rounded-md max-w-[600px] md:max-w-none">
+          <RadarApexChart />
         </div>
-        <div className="bg-gray-700 w-[100%] md:w-[50%] h-[290px] rounded-md max-w-[600px] md:max-w-none"></div>
+        <div className="bg-white w-[100%] md:w-[50%] h-[290px] rounded-md max-w-[600px] md:max-w-none overflow-hidden">
+          {/* <div className="bg-gray-700 w-[100%] md:w-[50%] h-[290px] rounded-md max-w-[600px] md:max-w-none "> */}
+          <LineApexChart />
+        </div>
       </div>
     </div>
   );

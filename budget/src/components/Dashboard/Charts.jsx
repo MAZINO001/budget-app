@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import ReactApexChart from "react-apexcharts";
-export default function ApexChart() {
+export function RadarApexChart() {
   const state = {
     series: [
       {
@@ -13,28 +14,28 @@ export default function ApexChart() {
         type: "radar",
       },
       dataLabels: {
-        enabled: true,
+        enabled: false,
       },
       plotOptions: {
         radar: {
-          size: 140,
+          size: 130,
           polygons: {
-            strokeColors: "#e9e9e9",
+            strokeColors: "#000",
             fill: {
-              colors: ["#f8f8f8", "#fff"],
+              colors: ["#fff", "#fff"],
             },
           },
         },
       },
       title: {
-        text: "Radar with Polygon Fill",
+        text: "Your Chart Title",
       },
       colors: ["#FF4560"],
       markers: {
-        size: 4,
+        size: 3,
         colors: ["#fff"],
         strokeColor: "#FF4560",
-        strokeWidth: 2,
+        strokeWidth: 1,
       },
       tooltip: {
         y: {
@@ -76,10 +77,155 @@ export default function ApexChart() {
           options={state.options}
           series={state.series}
           type="radar"
-          height={350}
+          // height={350}
+          height={300}
         />
       </div>
       <div id="html-dist"></div>
     </div>
   );
 }
+
+//second line chart
+
+import React from "react";
+export function LineApexChart() {
+  const [chartData, setChartData] = React.useState({
+    series: [
+      {
+        name: "series1",
+        data: [31, 40, 28, 51, 42, 109, 100],
+      },
+      {
+        name: "series2",
+        data: [11, 32, 45, 32, 34, 52, 41],
+      },
+    ],
+    options: {
+      chart: {
+        height: 350,
+        type: "area",
+      },
+      dataLabels: {
+        enabled: false,
+      },
+      stroke: {
+        curve: "smooth",
+      },
+      xaxis: {
+        type: "datetime",
+        categories: [
+          "2018-09-19T00:00:00.000Z",
+          "2018-09-19T01:30:00.000Z",
+          "2018-09-19T02:30:00.000Z",
+          "2018-09-19T03:30:00.000Z",
+          "2018-09-19T04:30:00.000Z",
+          "2018-09-19T05:30:00.000Z",
+          "2018-09-19T06:30:00.000Z",
+        ],
+      },
+      title: {
+        text: "Your Chart Title", // Set your chart title
+        style: {
+          color: "#000", // Black color for the title
+        },
+      },
+      tooltip: {
+        x: {
+          format: "dd/MM/yy HH:mm",
+        },
+      },
+    },
+  });
+
+  return (
+    <div>
+      <div id="chart">
+        <ReactApexChart
+          options={chartData.options}
+          series={chartData.series}
+          type="area"
+          // height={330}
+          height={275}
+        />
+      </div>
+      <div id="html-dist"></div>
+    </div>
+  );
+}
+
+// //third line chart
+
+// import React from "react";
+// export function LineApexChart() {
+//   const [chartData, setChartData] = React.useState({
+//     series: [
+//       {
+//         name: "series1",
+//         data: [31, 40, 28, 51, 42, 109, 100],
+//       },
+//       {
+//         name: "series2",
+//         data: [11, 32, 45, 32, 34, 52, 41],
+//       },
+//     ],
+//     options: {
+//       chart: {
+//         height: 350,
+//         type: "area",
+//       },
+//       theme: {
+//         monochrome: {
+//           enabled: true,
+//           colors: ["#000"],
+//         },
+//       },
+//       xaxis: {
+//         axisBorder: {
+//           color: "#000", // Black color for x-axis border
+//         },
+//         labels: {
+//           style: {
+//             color: "#000", // Black color for x-axis labels
+//           },
+//         },
+//       },
+//       yaxis: {
+//         axisBorder: {
+//           color: "#000", // Black color for y-axis border
+//         },
+//         labels: {
+//           style: {
+//             color: "#000", // Black color for y-axis labels
+//           },
+//         },
+//       },
+      
+//       dataLabels: {
+//         enabled: false, // Disable data labels if not needed
+//       },
+//       stroke: {
+//         curve: "smooth",
+//       },
+//       tooltip: {
+//         x: {
+//           format: "dd/MM/yy HH:mm",
+//         },
+//       },
+//     },
+//   });
+
+//   return (
+//     <div>
+//       <div id="chart">
+//         <ReactApexChart
+//           options={chartData.options}
+//           series={chartData.series}
+//           type="area"
+//           height={290}
+//         />
+//       </div>
+//       <div id="html-dist"></div>
+//     </div>
+//   );
+// }
