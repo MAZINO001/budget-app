@@ -1,9 +1,14 @@
+/*********************** transactions in add new ************************ */
+
 /* eslint-disable react/prop-types */
 import { IoMdRestaurant } from "react-icons/io";
 import "primereact/resources/themes/tailwind-light/theme.css";
-
-import { useState } from "react";
+import { InputNumber } from "primereact/inputnumber";
+import { Button } from "primereact/button";
+import { InputTextarea } from "primereact/inputtextarea";
+import { Calendar } from "primereact/calendar";
 import { Dropdown } from "primereact/dropdown";
+import { useState } from "react";
 export function Rnage() {
   const [selectedCity, setSelectedCity] = useState(null);
   const cities = [{ range: "Month" }, { range: "Week" }, { range: "Day" }];
@@ -23,8 +28,6 @@ export function Rnage() {
 }
 
 //input bumbers
-
-import { InputNumber } from "primereact/inputnumber";
 
 export default function Input1() {
   const [value1, setValue1] = useState(20);
@@ -49,7 +52,7 @@ export default function Input1() {
   );
 }
 //button Component
-import { Button } from "primereact/button";
+
 export function AddButton() {
   return (
     <div className="card flex items-center justify-center">
@@ -61,7 +64,6 @@ export function AddButton() {
   );
 }
 //text earea
-import { InputTextarea } from "primereact/inputtextarea";
 
 export function Textarea() {
   const [value, setValue] = useState("");
@@ -132,10 +134,8 @@ export function Category() {
 }
 
 //date
-import { Calendar } from "primereact/calendar";
 export function Date() {
   const [date, setDate] = useState(null);
-
   return (
     <div className="card flex flex-wrap gap-3 p-fluid">
       <div className="flex-auto">
@@ -157,7 +157,6 @@ export function Date() {
 //time
 export function Time() {
   const [date, setDate] = useState(null);
-
   return (
     <div className="card flex flex-wrap gap-3 p-fluid">
       <div className="flex-auto">
@@ -177,3 +176,6 @@ export function Time() {
     </div>
   );
 }
+/************************  savings in add new *********************** */
+
+/************************  budget in add new *********************** */
