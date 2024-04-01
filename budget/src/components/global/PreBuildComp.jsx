@@ -363,7 +363,7 @@ export function HistoryPreBiuld2() {
     return (
       <div
         // className={className}
-        className="className bg-red-500 rounded-md mb-2 flex items-center"
+        className="className bg-gray-600 rounded-md mb-2 flex items-center w-[100%]"
         style={{ height: options.props.itemSize + "px" }}
       >
         {item}
@@ -377,8 +377,8 @@ export function HistoryPreBiuld2() {
         items={items}
         itemSize={50}
         itemTemplate={itemTemplate}
-        className="border-1 surface-border border-round"
-        style={{ width: "200px", height: "200px" }}
+        className="border-1 surface-border border-round "
+        style={{ width: "100%", height: "207px" }}
       />
     </div>
   );
@@ -399,7 +399,7 @@ export function HistoryPreBiuld3() {
     return (
       <div
         // className={className}
-        className="className bg-red-500 rounded-md mb-2 flex items-center"
+        className="className bg-gray-600 rounded-md mb-2 flex items-center w-[100%]"
         style={{ height: options.props.itemSize + "px" }}
       >
         {item}
@@ -414,7 +414,7 @@ export function HistoryPreBiuld3() {
         itemSize={50}
         itemTemplate={itemTemplate}
         className="border-1 surface-border border-round"
-        style={{ width: "200px", height: "200px" }}
+        style={{ width: "100%", height: "207px" }}
       />
     </div>
   );
