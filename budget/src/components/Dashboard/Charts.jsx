@@ -18,17 +18,20 @@ export function RadarApexChart() {
       },
       plotOptions: {
         radar: {
-          size: 130,
+          size: 125,
           polygons: {
             strokeColors: "#000",
             fill: {
-              colors: ["#fff", "#fff"],
+              // colors: ["#fff", "#fff"],
             },
           },
         },
       },
       title: {
-        text: "Your Chart Title",
+        text: "Your Chart Title", // Set your chart title
+        style: {
+          color: "#000", // Black color for the title
+        },
       },
       colors: ["#FF4560"],
       markers: {
@@ -77,8 +80,8 @@ export function RadarApexChart() {
           options={state.options}
           series={state.series}
           type="radar"
-          // height={350}
-          height={300}
+          className="bg-gray-700"
+          height={277}
         />
       </div>
       <div id="html-dist"></div>
@@ -145,87 +148,11 @@ export function LineApexChart() {
           options={chartData.options}
           series={chartData.series}
           type="area"
-          // height={330}
-          height={275}
+          height={277}
+          className="bg-gray-700"
         />
       </div>
       <div id="html-dist"></div>
     </div>
   );
 }
-
-// //third line chart
-
-// import React from "react";
-// export function LineApexChart() {
-//   const [chartData, setChartData] = React.useState({
-//     series: [
-//       {
-//         name: "series1",
-//         data: [31, 40, 28, 51, 42, 109, 100],
-//       },
-//       {
-//         name: "series2",
-//         data: [11, 32, 45, 32, 34, 52, 41],
-//       },
-//     ],
-//     options: {
-//       chart: {
-//         height: 350,
-//         type: "area",
-//       },
-//       theme: {
-//         monochrome: {
-//           enabled: true,
-//           colors: ["#000"],
-//         },
-//       },
-//       xaxis: {
-//         axisBorder: {
-//           color: "#000", // Black color for x-axis border
-//         },
-//         labels: {
-//           style: {
-//             color: "#000", // Black color for x-axis labels
-//           },
-//         },
-//       },
-//       yaxis: {
-//         axisBorder: {
-//           color: "#000", // Black color for y-axis border
-//         },
-//         labels: {
-//           style: {
-//             color: "#000", // Black color for y-axis labels
-//           },
-//         },
-//       },
-      
-//       dataLabels: {
-//         enabled: false, // Disable data labels if not needed
-//       },
-//       stroke: {
-//         curve: "smooth",
-//       },
-//       tooltip: {
-//         x: {
-//           format: "dd/MM/yy HH:mm",
-//         },
-//       },
-//     },
-//   });
-
-//   return (
-//     <div>
-//       <div id="chart">
-//         <ReactApexChart
-//           options={chartData.options}
-//           series={chartData.series}
-//           type="area"
-//           height={290}
-//         />
-//       </div>
-//       <div id="html-dist"></div>
-//     </div>
-//   );
-// }

@@ -35,12 +35,11 @@ import {
 
 export default function AddNew() {
   return (
-    <div className="flex gap-2 h-[100%] mx-2 mb-2 text-black">
+    <div className="flex gap-2 h-[100%] mx-2 mb-2 mt-1 text-black ">
       <div className="bg-gray-700 w-[50%] h-full px-16 flex flex-col gap-y-2 rounded-md">
-        <h2 className="capitalize text-center text-lg text-white font-bold tracking-wider">
+        <h2 className="capitalize text-center text-lg text-white font-bold tracking-wider ">
           add transaction
         </h2>
-
         <Input1 />
         <Category />
         <Date />

@@ -100,7 +100,7 @@
 import HistoryPreBiuld from "../global/PreBuildComp";
 export default function History() {
   return (
-    <div className="mx-2 mb-2 ">
+    <div className="mx-2 mb-2 bg-red-500 h-[100%] mt-1 max-h-[608px] overflow-hidden">
       <HistoryPreBiuld />
     </div>
   );
