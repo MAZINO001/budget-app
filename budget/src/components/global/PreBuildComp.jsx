@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /*********************** transactions in add new ************************ */
 
 /* eslint-disable react/prop-types */
@@ -8,7 +9,8 @@ import { Button } from "primereact/button";
 import { InputTextarea } from "primereact/inputtextarea";
 import { Calendar } from "primereact/calendar";
 import { Dropdown } from "primereact/dropdown";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 export function Rnage() {
   const [selectedCity, setSelectedCity] = useState(null);
   const cities = [{ range: "Month" }, { range: "Week" }, { range: "Day" }];
@@ -292,30 +294,50 @@ export function AddButton2() {
   );
 }
 
-
 /************************* history ****************************/
 
-import {  useEffect } from 'react';
-import { DataTable } from 'primereact/datatable';
-import { Column } from 'primereact/column';
-import { ProductService } from './service/ProductService';
-
-export default function SingleColumnDemo() {
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        ProductService.getProductsMini().then(data => setProducts(data));
-    }, []);
-
-    return (
-        <div className="card">
-            <DataTable value={products} tableStyle={{ minWidth: '50rem' }}>
-                <Column field="code" header="Code" sortable style={{ width: '25%' }}></Column>
-                <Column field="name" header="Name" sortable style={{ width: '25%' }}></Column>
-                <Column field="category" header="Category" sortable style={{ width: '25%' }}></Column>
-                <Column field="quantity" header="Quantity" sortable style={{ width: '25%' }}></Column>
-            </DataTable>
-        </div>
-    );
+import { DataTable } from "primereact/datatable";
+import { Column } from "primereact/column";
+import Data from "../../Data/fakeData.json";
+export default function HistoryPreBiuld() {
+  const [transactions, setTransactions] = useState(Data);
+  return (
+    <div className="card">
+      <DataTable
+        value={transactions}
+        tableStyle={{ minWidth: "30rem", backgroundColor: "red" }}
+      >
+        <Column
+          field="Category"
+          header="Category"
+          sortable
+          style={{ width: "20%" }}
+        ></Column>
+        <Column
+          field="Date"
+          header="Date"
+          sortable
+          style={{ width: "20%" }}
+        ></Column>
+        <Column
+          field="Date"
+          header="Date"
+          sortable
+          style={{ width: "20%" }}
+        ></Column>
+        <Column
+          field="Time"
+          header="Time"
+          sortable
+          style={{ width: "20%" }}
+        ></Column>
+        <Column
+          field="Amount"
+          header="Amount"
+          sortable
+          style={{ width: "20%" }}
+        ></Column>
+      </DataTable>
+    </div>
+  );
 }
-        

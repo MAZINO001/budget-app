@@ -1,33 +1,107 @@
 [
-    {
-      "Date": "03-23",
-      "Category": "Groceries",
-      "Description": "Milk, Bread, Eggs ($5.25)",
-      "Amount": 15.75
-    },
-    {
-      "Date": "03-22",
-      "Category": "Entertainment",
-      "Description": "Movie Ticket (The New Guardians 3)",
-      "Amount": 12.00
-    },
-    {
-      "Date": "03-21",
-      "Category": "Bills",
-      "Description": "Electricity Bill",
-      "Amount": 78.42
-    },
-    {
-      "Date": "03-20",
-      "Category": "Transportation",
-      "Description": "Bus Fare (Monthly Pass)",
-      "Amount": 60.00
-    },
-    {
-      "Date": "03-19",
-      "Category": "Dining",
-      "Description": "Lunch at Cafe Evergreen",
-      "Amount": 14.50
-    }
-  ]
-  
+  {
+    "Date": "04-01",
+    "Time": "08:30",
+    "Category": "Housing",
+    "Description": "Monthly Rent",
+    "Amount": 1200.00
+  },
+  {
+    "Date": "04-02",
+    "Time": "10:00",
+    "Category": "Utilities",
+    "Description": "Electricity Bill",
+    "Amount": 90.25
+  },
+  {
+    "Date": "04-03",
+    "Time": "17:45",
+    "Category": "Transportation",
+    "Description": "Gas Refill",
+    "Amount": 40.50
+  },
+  {
+    "Date": "04-04",
+    "Time": "12:15",
+    "Category": "Debt",
+    "Description": "Credit Card Payment",
+    "Amount": 200.00
+  },
+  {
+    "Date": "04-05",
+    "Time": "09:00",
+    "Category": "Subscriptions",
+    "Description": "Netflix Subscription Renewal",
+    "Amount": 15.99
+  },
+  {
+    "Date": "04-06",
+    "Time": "13:30",
+    "Category": "Bills",
+    "Description": "Internet Bill",
+    "Amount": 60.00
+  },
+  {
+    "Date": "04-07",
+    "Time": "11:20",
+    "Category": "Groceries",
+    "Description": "Grocery Shopping (Fruits, Vegetables)",
+    "Amount": 35.75
+  },
+  {
+    "Date": "04-08",
+    "Time": "15:00",
+    "Category": "Clothing",
+    "Description": "New Shirt",
+    "Amount": 25.00
+  },
+  {
+    "Date": "04-09",
+    "Time": "18:45",
+    "Category": "Personal",
+    "Description": "Haircut",
+    "Amount": 30.00
+  },
+  {
+    "Date": "04-10",
+    "Time": "20:00",
+    "Category": "Entertainment",
+    "Description": "Concert Tickets",
+    "Amount": 50.00
+  },
+  {
+    "Date": "04-11",
+    "Time": "09:30",
+    "Category": "Pets",
+    "Description": "Pet Food and Supplies",
+    "Amount": 45.50
+  },
+  {
+    "Date": "04-12",
+    "Time": "14:00",
+    "Category": "Gifts",
+    "Description": "Birthday Gift for Friend",
+    "Amount": 30.00
+  },
+  {
+    "Date": "04-13",
+    "Time": "16:20",
+    "Category": "Donations",
+    "Description": "Charity Donation",
+    "Amount": 20.00
+  },
+  {
+    "Date": "04-14",
+    "Time": "07:00",
+    "Category": "Travel",
+    "Description": "Flight Ticket Booking",
+    "Amount": 300.00
+  },
+  {
+    "Date": "04-15",
+    "Time": "12:00",
+    "Category": "Education",
+    "Description": "Textbook Purchase",
+    "Amount": 75.00
+  }
+]
