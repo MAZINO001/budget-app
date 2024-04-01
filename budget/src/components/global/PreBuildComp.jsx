@@ -27,25 +27,25 @@ export function Rnage() {
   );
 }
 
-//input bumbers
+//input numbers
 
-export default function Input1() {
-  const [value1, setValue1] = useState(20);
+export function Input1() {
+  const [Amount, setAmount] = useState(20);
 
   return (
     <div className="card flex flex-wrap gap-3 p-fluid">
       <div className="flex-auto">
-        <label htmlFor="stacked-buttons" className="font-bold block mb-2">
+        <label htmlFor="amount1" className="font-bold block mb-2">
           Amount
         </label>
         <InputNumber
-          inputId="stacked-buttons"
-          value={value1}
-          onValueChange={(e) => setValue1(e.value)}
+          inputId="amount1"
+          value={Amount}
+          onValueChange={(e) => setAmount(e.value)}
           placeholder="$0.00"
           mode="currency"
           currency="USD"
-          style={{ height: "48px" }}
+          style={{ height: "40px" }}
         />
       </div>
     </div>
@@ -58,7 +58,7 @@ export function AddButton() {
     <div className="card flex items-center justify-center">
       <Button
         label="Submit"
-        className="w-[35%] px-2 py-2 bg-[#06B6D4] text-white h-[48px] flex items-center "
+        className="w-[35%] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center "
       />
     </div>
   );
@@ -127,6 +127,8 @@ export function Category() {
         optionLabel="name"
         placeholder="Select a Category"
         filter
+        // style={{ height: "40px" }}
+        className="h-[40px] flex items-center"
         itemTemplate={categoryOptionTemplate}
       />
     </div>
@@ -147,7 +149,7 @@ export function Date() {
           value={date}
           placeholder="Add Date"
           onChange={(e) => setDate(e.value)}
-          style={{ height: "48px" }}
+          style={{ height: "40px" }}
         />
       </div>
     </div>
@@ -170,12 +172,150 @@ export function Time() {
           timeOnly
           placeholder="Add time"
           icon={() => <i className="pi pi-clock" />}
-          style={{ height: "48px" }}
+          style={{ height: "40px" }}
         />
       </div>
     </div>
   );
 }
 /************************  savings in add new *********************** */
+//amount of saving
+export function Input2() {
+  const [value2, setValue2] = useState(20);
 
+  return (
+    <div className="card flex flex-wrap gap-3 p-fluid">
+      <div className="flex-auto">
+        <label htmlFor="amount" className="font-bold block mb-2">
+          Amount
+        </label>
+        <InputNumber
+          inputId="amount"
+          value={value2}
+          onValueChange={(e) => setValue2(e.value)}
+          placeholder="$0.00"
+          mode="currency"
+          currency="USD"
+          style={{ height: "40px" }}
+        />
+      </div>
+    </div>
+  );
+}
+
+//name of saving
+export function Textarea2() {
+  const [value, setValue] = useState("");
+
+  return (
+    <div className="card flex flex-col justify-content-center">
+      <label htmlFor="description" className="font-bold block mb-2">
+        Description
+      </label>
+      <InputTextarea
+        inputId="description"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        style={{ padding: " 2px 12px", height: "40px" }}
+      />
+    </div>
+  );
+}
+//duration of saving
+
+export function Durations() {
+  const [dates, setDates] = useState(null);
+
+  return (
+    <div className="card flex justify-content-center flex-col">
+      <label htmlFor="duration" className="font-bold block mb-2">
+        Duration
+      </label>
+      <Calendar
+        inputId="duration"
+        value={dates}
+        onChange={(e) => setDates(e.value)}
+        selectionMode="range"
+        readOnlyInput
+        hideOnRangeSelection
+        style={{ height: "40px" }}
+      />
+    </div>
+  );
+}
+//btn
+export function AddButton1() {
+  return (
+    <div className="card flex items-center justify-center mt-2">
+      <Button
+        label="Submit"
+        className="w-[35%] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center "
+      />
+    </div>
+  );
+}
 /************************  budget in add new *********************** */
+// budget mount
+export function Input3() {
+  const [value3, setValue3] = useState(20);
+
+  return (
+    <div className="card flex flex-wrap gap-3 p-fluid">
+      <div className="flex-auto">
+        <label htmlFor="amount2" className="font-bold block mb-2">
+          Amount
+        </label>
+        <InputNumber
+          inputId="amount2"
+          value={value3}
+          onValueChange={(e) => setValue3(e.value)}
+          placeholder="$0.00"
+          mode="currency"
+          currency="USD"
+          style={{ height: "40px" }}
+        />
+      </div>
+    </div>
+  );
+}
+//categories
+
+//btn
+export function AddButton2() {
+  return (
+    <div className="card flex items-center justify-center mt-2">
+      <Button
+        label="Submit"
+        className="w-[35%] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center "
+      />
+    </div>
+  );
+}
+
+
+/************************* history ****************************/
+
+import {  useEffect } from 'react';
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
+import { ProductService } from './service/ProductService';
+
+export default function SingleColumnDemo() {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        ProductService.getProductsMini().then(data => setProducts(data));
+    }, []);
+
+    return (
+        <div className="card">
+            <DataTable value={products} tableStyle={{ minWidth: '50rem' }}>
+                <Column field="code" header="Code" sortable style={{ width: '25%' }}></Column>
+                <Column field="name" header="Name" sortable style={{ width: '25%' }}></Column>
+                <Column field="category" header="Category" sortable style={{ width: '25%' }}></Column>
+                <Column field="quantity" header="Quantity" sortable style={{ width: '25%' }}></Column>
+            </DataTable>
+        </div>
+    );
+}
+        
