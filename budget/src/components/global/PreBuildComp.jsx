@@ -300,18 +300,17 @@ import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import Data from "../../Data/fakeData.json";
 
-export default function HistoryPreBiuld() {
+export default function HistoryPreBiuld1() {
   const [transactions, setTransactions] = useState(Data);
 
   return (
-    // <div className="card" style={{ backgroundColor: "rgb(75, 85, 99)" }}>
-    <div className="card ">
-      <DataTable value={transactions} tableStyle={{ minWidth: "35rem" }}  >
+    <div className="card" style={{ backgroundColor: "#000" }}>
+      <DataTable value={transactions} tableStyle={{ minWidth: "35rem" }}>
         <Column
           field="Category"
           header="Category"
           sortable
-          className="bg-gray-600 text-white"
+          className="bg-gray-600 text-white "
           style={{ width: "20%", margin: "0 5px" }}
         ></Column>
         <Column
@@ -343,6 +342,80 @@ export default function HistoryPreBiuld() {
           style={{ width: "20%", margin: "0 5px" }}
         ></Column>
       </DataTable>
+    </div>
+  );
+}
+
+/************************* History********************** */
+import { VirtualScroller } from "primereact/virtualscroller";
+import { classNames } from "primereact/utils";
+
+export function HistoryPreBiuld2() {
+  const [items] = useState(
+    Array.from({ length: 100 }).map((_, i) => `Item #${i}`)
+  );
+
+  const itemTemplate = (item, options) => {
+    const className = classNames("flex align-items-center p-2", {
+      "surface-hover": options.odd,
+    });
+
+    return (
+      <div
+        // className={className}
+        className="className bg-red-500 rounded-md mb-2 flex items-center"
+        style={{ height: options.props.itemSize + "px" }}
+      >
+        {item}
+      </div>
+    );
+  };
+
+  return (
+    <div className="card flex justify-content-center">
+      <VirtualScroller
+        items={items}
+        itemSize={50}
+        itemTemplate={itemTemplate}
+        className="border-1 surface-border border-round"
+        style={{ width: "200px", height: "200px" }}
+      />
+    </div>
+  );
+}
+
+/************************* Popular********************** */
+
+export function HistoryPreBiuld3() {
+  const [items] = useState(
+    Array.from({ length: 100 }).map((_, i) => `Item #${i}`)
+  );
+
+  const itemTemplate = (item, options) => {
+    const className = classNames("flex align-items-center p-2", {
+      "surface-hover": options.odd,
+    });
+
+    return (
+      <div
+        // className={className}
+        className="className bg-red-500 rounded-md mb-2 flex items-center"
+        style={{ height: options.props.itemSize + "px" }}
+      >
+        {item}
+      </div>
+    );
+  };
+
+  return (
+    <div className="card flex justify-content-center">
+      <VirtualScroller
+        items={items}
+        itemSize={50}
+        itemTemplate={itemTemplate}
+        className="border-1 surface-border border-round"
+        style={{ width: "200px", height: "200px" }}
+      />
     </div>
   );
 }
