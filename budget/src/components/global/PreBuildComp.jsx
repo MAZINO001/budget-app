@@ -306,9 +306,11 @@ export default function HistoryPreBiuld1() {
   return (
     <div className="card " style={{ backgroundColor: "#000" }}>
       <DataTable
-        className="text-lg gap-2"
+        className="text-lg "
         value={transactions}
-        tableStyle={{ minWidth: "35rem", border: "10px solid #ff0000"  , display:"flex" , }}
+        tableStyle={{
+          minWidth: "35rem",
+        }}
       >
         <Column
           field="Category"
