@@ -299,43 +299,48 @@ export function AddButton2() {
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import Data from "../../Data/fakeData.json";
+
 export default function HistoryPreBiuld() {
   const [transactions, setTransactions] = useState(Data);
+
   return (
-    <div className="card">
-      <DataTable
-        value={transactions}
-        tableStyle={{ minWidth: "30rem", backgroundColor: "red" }}
-      >
+    // <div className="card" style={{ backgroundColor: "rgb(75, 85, 99)" }}>
+    <div className="card ">
+      <DataTable value={transactions} tableStyle={{ minWidth: "35rem" }}  >
         <Column
           field="Category"
           header="Category"
           sortable
-          style={{ width: "20%" }}
+          className="bg-gray-600 text-white"
+          style={{ width: "20%", margin: "0 5px" }}
         ></Column>
         <Column
           field="Date"
           header="Date"
           sortable
-          style={{ width: "20%" }}
+          className="bg-gray-600 text-white"
+          style={{ width: "20%", margin: "0 5px" }}
         ></Column>
         <Column
           field="Date"
           header="Date"
           sortable
-          style={{ width: "20%" }}
+          className="bg-gray-600 text-white"
+          style={{ width: "20%", margin: "0 5px" }}
         ></Column>
         <Column
           field="Time"
           header="Time"
           sortable
-          style={{ width: "20%" }}
+          className="bg-gray-600 text-white"
+          style={{ width: "20%", margin: "0 5px" }}
         ></Column>
         <Column
           field="Amount"
           header="Amount"
           sortable
-          style={{ width: "20%" }}
+          className="bg-gray-600 text-white"
+          style={{ width: "20%", margin: "0 5px" }}
         ></Column>
       </DataTable>
     </div>
