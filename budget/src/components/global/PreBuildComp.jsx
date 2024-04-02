@@ -262,7 +262,7 @@ export function Input3() {
   const [value3, setValue3] = useState(20);
 
   return (
-    <div className="card flex flex-wrap gap-3 p-fluid">
+    <div className="card flex flex-wrap gap-3 p-fluid ">
       <div className="flex-auto">
         <label htmlFor="amount2" className="font-bold block mb-2">
           Amount
@@ -382,7 +382,7 @@ export function HistoryPreBiuld2() {
         items={items}
         itemSize={50}
         itemTemplate={itemTemplate}
-        className="border-1 surface-border border-round "
+        className="border-1 surface-border border-round mx-2"
         style={{ width: "100%", height: "207px" }}
       />
     </div>
@@ -418,7 +418,7 @@ export function HistoryPreBiuld3() {
         items={items}
         itemSize={50}
         itemTemplate={itemTemplate}
-        className="border-1 surface-border border-round"
+        className="border-1 surface-border border-round mx-2"
         style={{ width: "100%", height: "207px" }}
       />
     </div>

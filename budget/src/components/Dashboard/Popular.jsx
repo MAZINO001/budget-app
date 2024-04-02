@@ -42,7 +42,9 @@ import { HistoryPreBiuld3 } from "../global/PreBuildComp";
 export default function Popular() {
   return (
     <div className="bg-gray-700 rounded-md">
-      <h3 className="pb-1 text-lg font-semibold tracking-wider ">Popular</h3>
+      <h3 className="pb-1 text-lg font-semibold tracking-wider ml-2 ">
+        Popular
+      </h3>
       <hr className="pb-2" />
       <HistoryPreBiuld3 />
     </div>

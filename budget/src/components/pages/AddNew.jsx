@@ -58,7 +58,7 @@ export default function AddNew() {
           <Durations />
           <AddButton1 />
         </div>
-        <div className="bg-gray-700 h-[43%] rounded-md p-2 ">
+        <div className="bg-gray-700 h-[42%] rounded-md p-2 ">
           <h2 className="capitalize text-center text-lg text-white font-bold tracking-wider ">
             add monthly budget
           </h2>
