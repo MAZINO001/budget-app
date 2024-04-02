@@ -1,23 +1,3 @@
-// import ButtonsDemo from "../global/PreBuildComp";
-// export default function ew() {
-//   return (
-//     <div className="flex gap-2 h-[100%] mx-2 mb-2 text-black">
-//       <div className="bg-gray-700 w-[50%] p-2 flex flex-col gap-y-2">
-//       <ButtonsDemo/>
-//         <div className="bg-white h-[25%]">categories</div>
-//         <input type="date" />
-//         <input type="datetime" />
-//         <textarea name="" id="" cols="20" rows="5"></textarea>
-//         <button type="submit" className="bg-red-500 ">add transaction</button>
-//       </div>
-//       <div className="w-[50%] h-[98.5%]">
-//         <div className="bg-gray-700 h-[50%] p-2  mb-2">test</div>
-//         <div className="bg-gray-700 h-[50%] p-2 ">test</div>
-//       </div>
-//     </div>
-//   );
-// }
-
 import {
   Durations,
   AddButton1,
@@ -35,10 +15,9 @@ import {
 
 export default function AddNew() {
   return (
-    // <div className="flex flex-col md:flex-col  items-center gap-2 h-[100%] w-[100%] mx-2 mb-2 mt-1 text-black ">
-    <div className="flex gap-2 h-[100%] w-[100%] mx-2 mb-2 mt-1 text-black ">
-      <div className="bg-gray-700 w-[50%] h-full px-2 flex flex-col gap-y-2 rounded-md">
-        <h2 className="capitalize text-center text-lg text-white font-bold tracking-wider sm:mb-0 mb-2">
+    <div className="flex gap-2 h-[100%] mx-2 text-black ">
+      <div className="bg-gray-700 w-[50%] px-2 flex flex-col gap-y-2 rounded-md relative">
+        <h2 className="capitalize text-center text-lg text-white font-bold tracking-wider sm:mb-0 mb-2 ">
           add New transaction
         </h2>
         <Input1 />
@@ -48,8 +27,8 @@ export default function AddNew() {
         <Textarea />
         <AddButton />
       </div>
-      <div className="w-[50%] h-[100%]">
-        <div className="bg-gray-700 h-[57%] rounded-md p-2  mb-2">
+      <div className="w-[50%] ">
+        <div className="bg-gray-700 h-[60%] rounded-md p-2  mb-2 relative">
           <h2 className="capitalize text-center text-lg text-white font-bold tracking-wider">
             add savings
           </h2>
@@ -58,7 +37,7 @@ export default function AddNew() {
           <Durations />
           <AddButton1 />
         </div>
-        <div className="bg-gray-700 h-[42%] rounded-md p-2 ">
+        <div className="bg-gray-700 h-[38.5%] rounded-md p-2 relative">
           <h2 className="capitalize text-center text-lg text-white font-bold tracking-wider ">
             add monthly budget
           </h2>

@@ -23,7 +23,7 @@ export function Rnage() {
         options={cities}
         optionLabel="range"
         placeholder="Month"
-        className="w-full md:w-14rem h-[35px] flex items-center"
+        className="w-full md:w-14rem h-[33px] flex items-center"
       />
     </div>
   );
@@ -60,7 +60,8 @@ export function AddButton() {
     <div className="card flex items-center justify-center">
       <Button
         label="Submit"
-        className="w-[35%] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center "
+        // className="w-[150px] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center "
+        className="w-[150px] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center absolute bottom-[5px] "
       />
     </div>
   );
@@ -251,7 +252,8 @@ export function AddButton1() {
     <div className="card flex items-center justify-center mt-2">
       <Button
         label="Submit"
-        className="w-[35%] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center "
+        // className="w-[150px] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center "
+        className="w-[150px] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center absolute bottom-[5px] "
       />
     </div>
   );
@@ -288,7 +290,8 @@ export function AddButton2() {
     <div className="card flex items-center justify-center mt-2">
       <Button
         label="Submit"
-        className="w-[35%] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center "
+        // className="w-[150px] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center "
+        className="w-[150px] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center absolute bottom-[5px] "
       />
     </div>
   );
