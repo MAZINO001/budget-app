@@ -80,7 +80,7 @@ export function RadarApexChart() {
           options={state.options}
           series={state.series}
           type="radar"
-          className="bg-gray-700"
+          className="bg-gray-700 rounded-md"
           height={277}
         />
       </div>

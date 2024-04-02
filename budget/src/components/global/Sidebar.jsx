@@ -89,7 +89,7 @@ export default function Sidebar() {
   }, []);
 
   return (
-    <div className="md:w-[50px] lg:w-[150px] h-[45px] max-h-[600px] md:h-[100vh] flex flex-row md:flex-col justify-between items-center bg-gray-700">
+    <div className="md:w-[50px] lg:w-[150px] h-[45px] max-h-[592px] md:h-[100vh] flex flex-row md:flex-col justify-between items-center bg-gray-700 ml-2 mt-2 rounded-md">
       <Link to="/" className="flex items-center gap-2 md:ml-0 ml-2 md:mt-2">
         <GiWallet className="text-2xl font-semibold tracking-wide cursor-pointer" />
         <span className="text-lg none sm:hidden lg:flex flex">CashCare</span>
@@ -135,7 +135,7 @@ export default function Sidebar() {
             location.pathname === "/tools" ? "text-red-500" : ""
           }`}
         >
-          <FaTools  className="text-2xl"/>
+          <FaTools className="text-2xl" />
           <span className="text-sm hidden lg:flex">Calendar</span>
         </Link>
       </div>

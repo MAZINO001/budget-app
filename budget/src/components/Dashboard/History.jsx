@@ -90,7 +90,7 @@ export default function History() {
         </Link>
       </div>
 
-      <hr className="pb-2 " />
+      <hr className="pb-2" />
       <HistoryPreBiuld2 />
     </div>
   );

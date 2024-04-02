@@ -35,7 +35,8 @@ import {
 
 export default function AddNew() {
   return (
-    <div className="flex flex-col md:flex-col  items-center gap-2 h-[100%] mx-2 mb-2 mt-1 text-black ">
+    // <div className="flex flex-col md:flex-col  items-center gap-2 h-[100%] w-[100%] mx-2 mb-2 mt-1 text-black ">
+    <div className="flex gap-2 h-[100%] w-[100%] mx-2 mb-2 mt-1 text-black ">
       <div className="bg-gray-700 w-[50%] h-full px-2 flex flex-col gap-y-2 rounded-md">
         <h2 className="capitalize text-center text-lg text-white font-bold tracking-wider sm:mb-0 mb-2">
           add New transaction
