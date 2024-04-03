@@ -312,42 +312,43 @@ export default function HistoryPreBiuld1() {
         className="text-lg "
         value={transactions}
         tableStyle={{
-          minWidth: "35rem",
+          minWidth: "30rem",
         }}
       >
         <Column
           field="Category"
           header="Category"
           sortable
-          className="bg-gray-600 text-white "
+          className="bg-gray-700 text-white "
         ></Column>
         <Column
           field="Date"
           header="Date"
           sortable
-          className="bg-gray-600 text-white"
+          className="bg-gray-700 text-white"
           style={{ width: "20%" }}
         ></Column>
         <Column
           field="Date"
           header="Date"
           sortable
-          className="bg-gray-600 text-white"
+          className="bg-gray-700 text-white"
           style={{ width: "20%" }}
         ></Column>
         <Column
           field="Time"
           header="Time"
           sortable
-          className="bg-gray-600 text-white"
+          className="bg-gray-700 text-white"
           style={{ width: "20%" }}
         ></Column>
         <Column
           field="Amount"
           header="Amount"
           sortable
-          className="bg-gray-600 text-white"
+          className="bg-gray-700 text-white"
           style={{ width: "20%" }}
+          headerStyle={{ backgroundColor: '#333', color: '#fff' }}
         ></Column>
       </DataTable>
     </div>

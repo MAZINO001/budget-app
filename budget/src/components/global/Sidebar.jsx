@@ -136,7 +136,7 @@ export default function Sidebar() {
           }`}
         >
           <FaTools className="text-2xl" />
-          <span className="text-sm hidden lg:flex">Calendar</span>
+          <span className="text-sm hidden lg:flex">Tools</span>
         </Link>
       </div>
 
