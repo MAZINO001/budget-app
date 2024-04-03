@@ -81,22 +81,22 @@ import {
 
 export default function AddNew() {
   return (
-    <div className="flex flex-col items-center w-[100%] bg-red-500 gap-2 h-[100%] mx-2 text-black ">
-      <div className="w-[100%] md:w-[50%] ">
-        <div className="bg-gray-700 h-[25%] px-2 flex flex-col gap-y-2 rounded-md relative mb-2">
+    <div className="flex flex-col md:flex-row items-center gap-2  md:h-[100%]  mx-2  text-black mb-16 md:mb-0">
+      <div className="w-[100%] md:w-[50%] h-[100%]">
+        <div className="bg-gray-700 h-[140px] md:h-[25%] px-2 flex flex-col gap-y-2 rounded-md relative mb-2 ">
           <h2 className="capitalize text-center text-lg text-white font-bold tracking-wider mb-[-25px]">
             add Amount
           </h2>
           <Input4 />
           <AddButton3 />
         </div>
-        <div className="bg-gray-700 h-[73.6%] px-2 flex flex-col gap-y-2 rounded-md relative">
+        <div className="bg-gray-700 h-[410px] md:h-[73.6%] px-2 flex flex-col gap-y-2 rounded-md relative">
           <h2 className="capitalize text-center text-lg text-white font-bold tracking-wider mb-[-25px]">
             add New transaction
           </h2>
           <Input1 />
           <Category />
-          <div className="flex itemx-center justify-between">
+          <div className="flex itemx-center justify-between gap-2">
             <Date />
             <Time />
           </div>
@@ -104,8 +104,8 @@ export default function AddNew() {
           <AddButton />
         </div>
       </div>
-      <div className="w-[50%] ">
-        <div className="bg-gray-700 h-[60%] rounded-md p-2  mb-2 relative">
+      <div className="w-[100%] md:w-[50%] h-[100%]">
+        <div className="bg-gray-700 h-[285px] md:h-[60%] rounded-md p-2  mb-2 relative">
           <h2 className="capitalize text-center text-lg text-white font-bold tracking-wider mb-[-25px]">
             add savings
           </h2>
@@ -114,7 +114,7 @@ export default function AddNew() {
           <Durations />
           <AddButton1 />
         </div>
-        <div className="bg-gray-700 h-[38.5%] rounded-md p-2 relative">
+        <div className="bg-gray-700 h-[150px] md:h-[38.5%] rounded-md p-2 relative">
           <h2 className="capitalize text-center text-lg text-white font-bold tracking-wider mb-[-25px]">
             add monthly budget
           </h2>

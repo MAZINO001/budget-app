@@ -10,7 +10,7 @@ import { InputTextarea } from "primereact/inputtextarea";
 import { Calendar } from "primereact/calendar";
 import { Dropdown } from "primereact/dropdown";
 import { useEffect, useState } from "react";
-
+import Data from "../../Data/fakeData.json";
 export function Rnage() {
   const [selectedCity, setSelectedCity] = useState(null);
   const cities = [{ range: "Month" }, { range: "Week" }, { range: "Day" }];
@@ -302,7 +302,6 @@ export function AddButton2() {
 
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
-import Data from "../../Data/fakeData.json";
 
 export default function HistoryPreBiuld1() {
   const [transactions, setTransactions] = useState(Data);
@@ -366,9 +365,16 @@ import { VirtualScroller } from "primereact/virtualscroller";
 import { classNames } from "primereact/utils";
 
 export function HistoryPreBiuld2() {
-  const [items] = useState(
-    Array.from({ length: 100 }).map((_, i) => `Item #${i}`)
-  );
+  // const [items] = useState(
+  //   Array.from({ length: 100 }).map((_, i) => `Item #${i}`)
+  // );
+  const items = Data.map((item) => (
+    <div key={item.index}>
+      <span>{item.Category}</span>
+      <span>{item.Time}</span>
+      <span>{item.Amount}$</span>
+    </div>
+  ));
 
   const itemTemplate = (item, options) => {
     const className = classNames("flex align-items-center p-2", {
@@ -377,8 +383,7 @@ export function HistoryPreBiuld2() {
 
     return (
       <div
-        // className={className}
-        className="className bg-gray-600 rounded-md mb-2 flex items-center w-[100%]"
+        className="className justify-between bg-gray-600 rounded-md mb-2 flex items-center w-[100%]"
         style={{ height: options.props.itemSize + "px" }}
       >
         {item}
@@ -398,7 +403,6 @@ export function HistoryPreBiuld2() {
     </div>
   );
 }
-
 /************************* Popular********************** */
 
 export function HistoryPreBiuld3() {
