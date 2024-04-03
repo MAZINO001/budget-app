@@ -53,6 +53,7 @@ export function Input1() {
     </div>
   );
 }
+
 //button Component
 
 export function AddButton() {
@@ -80,7 +81,7 @@ export function Textarea() {
         inputId="Description"
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        style={{ padding: " 2px 12px", height: "110px" }}
+        style={{ padding: " 2px 12px", height: "70px" }}
       />
     </div>
   );
@@ -429,6 +430,43 @@ export function HistoryPreBiuld3() {
         itemTemplate={itemTemplate}
         className="border-1 surface-border border-round mx-2"
         style={{ width: "100%", height: "207px" }}
+      />
+    </div>
+  );
+}
+
+// add amount
+
+export function Input4() {
+  const [Amount, setAmount] = useState(20);
+
+  return (
+    <div className="card flex flex-wrap gap-3 p-fluid">
+      <div className="flex-auto">
+        <label htmlFor="amount4" className="font-bold block mb-2">
+          Amount
+        </label>
+        <InputNumber
+          inputId="amount4"
+          value={Amount}
+          onValueChange={(e) => setAmount(e.value)}
+          placeholder="$0.00"
+          mode="currency"
+          currency="USD"
+          style={{ height: "40px" }}
+        />
+      </div>
+    </div>
+  );
+}
+
+export function AddButton3() {
+  return (
+    <div className="card flex items-center justify-center mt-2">
+      <Button
+        label="Submit"
+        // className="w-[150px] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center "
+        className="w-[150px] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center absolute bottom-[5px] "
       />
     </div>
   );

@@ -1,4 +1,4 @@
-import calculator from "../../assets/calculator.png";
+import GameLogo from "../../assets/guesstheprice (1).png";
 
 export default function Game() {
   const handleClick = () => {
@@ -14,11 +14,7 @@ export default function Game() {
         rel="noopener noreferrer"
         onClick={handleClick}
       >
-        <img
-          src={calculator}
-          alt="calculator"
-          className="calculator-container"
-        />
+        <img src={GameLogo} alt="GameLogo" className="Game-container" />
       </a>
     </div>
   );

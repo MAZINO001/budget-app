@@ -72,3 +72,12 @@ body {
     width: 60%;
     opacity: 0.8;
 }
+
+.Game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 60%;
+    opacity: 0.8;
+}
