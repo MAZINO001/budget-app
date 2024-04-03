@@ -46,3 +46,29 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #374151;
 }
+
+.calculator-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 93%;
+    opacity: 0.8;
+}
+
+.converter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 80%;
+    opacity: 0.8;
+}
+
+.FinancialLiteracy-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 60%;
+    opacity: 0.8;
+}

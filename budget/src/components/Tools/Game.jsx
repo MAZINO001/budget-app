@@ -1,7 +1,8 @@
-import Currency from "../../assets/Converter.png";
-export default function CurrencyConverter() {
+import calculator from "../../assets/calculator.png";
+
+export default function Game() {
   const handleClick = () => {
-    window.open("https://www.xe.com/currencyconverter/convert", "_blank");
+    window.open("https://guesstheprice.net/", "_blank");
   };
 
   return (
@@ -13,7 +14,11 @@ export default function CurrencyConverter() {
         rel="noopener noreferrer"
         onClick={handleClick}
       >
-        <img src={Currency} alt="calculator" className="calculator-container" />
+        <img
+          src={calculator}
+          alt="calculator"
+          className="calculator-container"
+        />
       </a>
     </div>
   );

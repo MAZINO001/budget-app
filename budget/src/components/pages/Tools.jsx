@@ -1,5 +1,7 @@
 import Calculator from "../Tools/Calculator";
 import CurrencyConverter from "../Tools/CurrencyConverter";
+import FinancialLiteracy from "../Tools/FinancialLiteracy";
+import Game from "../Tools/Game";
 
 export default function Tools() {
   return (
@@ -11,10 +13,10 @@ export default function Tools() {
         <CurrencyConverter />
       </div>
       <div className="bg-gray-700 rounded-md items-center flex justify-center cursor-pointer">
-        Financial Blogs
+        <FinancialLiteracy />
       </div>
       <div className="bg-gray-700 rounded-md items-center flex justify-center cursor-pointer">
-        Report Downloader
+        <Game />
       </div>
     </div>
   );

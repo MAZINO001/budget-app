@@ -1,8 +1,10 @@
-import calculator from "../../assets/calculator.png";
-
-export default function Calculator() {
+import FinancialLogo from "../../assets/finance.webp";
+export default function FinancialLiteracy() {
   const handleClick = () => {
-    window.open("https://www.desmos.com/scientific", "_blank");
+    window.open(
+      "https://www.themuse.com/advice/50-personal-finance-tips-that-will-change-the-way-you-think-about-money",
+      "_blank"
+    );
   };
 
   return (
@@ -15,9 +17,9 @@ export default function Calculator() {
         onClick={handleClick}
       >
         <img
-          src={calculator}
+          src={FinancialLogo}
           alt="calculator"
-          className="calculator-container"
+          className="FinancialLiteracy-container"
         />
       </a>
     </div>
