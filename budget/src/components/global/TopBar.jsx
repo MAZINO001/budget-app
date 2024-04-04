@@ -1,17 +1,44 @@
 import { GoBellFill } from "react-icons/go";
 import avatar from "../../assets/avatar.jpg";
-import { Rnage } from "./PreBuildComp";
+import { BadgeIcon, Rnage } from "./PreBuildComp";
+import { useState } from "react";
 export default function TopBar() {
+  const [PopUp, setPopUp] = useState(false);
   return (
     <div className=" w-full h-[50px] flex justify-between items-center px-2 py-2">
       <div className="w-[200px] h-[33px] bg-gray-700 flex items-center justify-center rounded-md">
         Food at KFC 50$
       </div>
       <div className="flex items-center gap-4 ">
-        <div className=" pl-4 flex items-center gap-4 rounded-md">
+        <div className=" pl-4 flex items-center gap-4 rounded-md text-white">
           <Rnage />
         </div>
-        <GoBellFill className="text-2xl cursor-pointer" />
+        <div className="relative" onClick={() => setPopUp((state) => !state)}>
+          <span className="absolute bottom-4 left-4">
+            <BadgeIcon />
+          </span>
+          <GoBellFill className="text-3xl cursor-pointer" />
+        </div>
+        <div
+          className={
+            PopUp
+              ? "bg-white absolute top-10 right-16 flex flex-col p-2 gap-y-2 rounded-md largeZIindex "
+              : "bg-white absolute top-10 right-16 hidden flex-col p-2 gap-y-2 rounded-md largeZIindex "
+          }
+        >
+          <span className="bg-gray-600 p-1 rounded-sm">
+            You are financially fucked :)
+          </span>
+          <span className="bg-gray-600 p-1 rounded-sm">
+            You are financially fucked :)
+          </span>
+          <span className="bg-gray-600 p-1 rounded-sm">
+            You are financially fucked :)
+          </span>
+          <span className="bg-gray-600 p-1 rounded-sm">
+            You are financially fucked :)
+          </span>
+        </div>
         <img
           src={avatar}
           className="w-[33px] h-[33px] rounded-full cursor-pointer"

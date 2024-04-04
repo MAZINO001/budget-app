@@ -16,14 +16,14 @@ export function Rnage() {
   const cities = [{ range: "Month" }, { range: "Week" }, { range: "Day" }];
 
   return (
-    <div className="card flex justify-content-center ">
+    <div className="card flex justify-content-center">
       <Dropdown
         value={selectedCity}
         onChange={(e) => setSelectedCity(e.value)}
         options={cities}
         optionLabel="range"
         placeholder="Month"
-        className="w-full md:w-14rem h-[33px] flex items-center"
+        className="w-full md:w-14rem h-[33px] flex items-center bg-gray-700 "
       />
     </div>
   );
@@ -41,7 +41,6 @@ export function Input1() {
           Amount
         </label>
         <InputNumber
-          inputId="amount1"
           value={Amount}
           onValueChange={(e) => setAmount(e.value)}
           placeholder="$0.00"
@@ -78,7 +77,6 @@ export function Textarea() {
         Description
       </label>
       <InputTextarea
-        inputId="Description"
         value={value}
         onChange={(e) => setValue(e.target.value)}
         style={{ padding: " 2px 12px", height: "70px" }}
@@ -124,7 +122,6 @@ export function Category() {
       </label>
 
       <Dropdown
-        inputId="Category"
         value={selectedCategory}
         onChange={(e) => setSelectedCategory(e.value)}
         options={Expenses} // Use Expenses array for options
@@ -169,7 +166,6 @@ export function Time() {
         <label htmlFor="buttondisplay" className="font-bold block mb-2">
           Time
         </label>
-
         <Calendar
           value={date}
           onChange={(e) => setDate(e.value)}
@@ -194,7 +190,6 @@ export function Input2() {
           Amount
         </label>
         <InputNumber
-          inputId="amount"
           value={value2}
           onValueChange={(e) => setValue2(e.value)}
           placeholder="$0.00"
@@ -217,7 +212,6 @@ export function Textarea2() {
         Description
       </label>
       <InputTextarea
-        inputId="description"
         value={value}
         onChange={(e) => setValue(e.target.value)}
         style={{ padding: " 2px 12px", height: "40px" }}
@@ -236,7 +230,6 @@ export function Durations() {
         Duration
       </label>
       <Calendar
-        inputId="duration"
         value={dates}
         onChange={(e) => setDates(e.value)}
         selectionMode="range"
@@ -271,7 +264,6 @@ export function Input3() {
           Amount
         </label>
         <InputNumber
-          inputId="amount2"
           value={value3}
           onValueChange={(e) => setValue3(e.value)}
           placeholder="$0.00"
@@ -383,7 +375,7 @@ export function HistoryPreBiuld2() {
 
     return (
       <div
-        className="className bg-gray-600 rounded-md mb-2 flex items-center w-[100%]"
+        className="className bg-gray-600 rounded-md mb-2 flex items-center w-[100%] "
         style={{ height: options.props.itemSize + "px" }}
       >
         {item}
@@ -397,7 +389,7 @@ export function HistoryPreBiuld2() {
         items={items}
         itemSize={50}
         itemTemplate={itemTemplate}
-        className="border-1 surface-border border-round mx-2"
+        className="border-1 surface-border border-round mx-2 "
         style={{ width: "100%", height: "207px" }}
       />
     </div>
@@ -457,7 +449,6 @@ export function Input4() {
           Amount
         </label>
         <InputNumber
-          inputId="amount4"
           value={Amount}
           onValueChange={(e) => setAmount(e.value)}
           placeholder="$0.00"
@@ -481,3 +472,14 @@ export function AddButton3() {
     </div>
   );
 }
+//badges in the ring thing :)
+import { Badge } from "primereact/badge";
+
+export function BadgeIcon() {
+  return (
+    <div className="card flex justify-content-center">
+      <Badge value="4" severity="info" className="bg-red-500"></Badge>
+    </div>
+  );
+}
+//the bill popup
