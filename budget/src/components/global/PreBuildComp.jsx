@@ -365,11 +365,11 @@ import { VirtualScroller } from "primereact/virtualscroller";
 import { classNames } from "primereact/utils";
 
 export function HistoryPreBiuld2() {
-  // const [items] = useState(
-  //   Array.from({ length: 100 }).map((_, i) => `Item #${i}`)
-  // );
   const items = Data.map((item) => (
-    <div key={item.index}>
+    <div
+      key={item.index}
+      className="flex items-center justify-between w-[100%] px-2"
+    >
       <span>{item.Category}</span>
       <span>{item.Time}</span>
       <span>{item.Amount}$</span>
@@ -383,7 +383,7 @@ export function HistoryPreBiuld2() {
 
     return (
       <div
-        className="className justify-between bg-gray-600 rounded-md mb-2 flex items-center w-[100%]"
+        className="className bg-gray-600 rounded-md mb-2 flex items-center w-[100%]"
         style={{ height: options.props.itemSize + "px" }}
       >
         {item}
@@ -406,10 +406,17 @@ export function HistoryPreBiuld2() {
 /************************* Popular********************** */
 
 export function HistoryPreBiuld3() {
-  const [items] = useState(
-    Array.from({ length: 100 }).map((_, i) => `Item #${i}`)
-  );
+  const top10Items = Data.sort((a, b) => b.Amount - a.Amount).slice(0, 10);
 
+  const items = top10Items.map((item) => (
+    <div
+      key={item.index}
+      className="flex items-center justify-between w-[100%] px-2"
+    >
+      <span>{item.Category}</span>
+      <span>{item.Amount}$</span>
+    </div>
+  ));
   const itemTemplate = (item, options) => {
     const className = classNames("flex align-items-center p-2", {
       "surface-hover": options.odd,
@@ -417,7 +424,6 @@ export function HistoryPreBiuld3() {
 
     return (
       <div
-        // className={className}
         className="className bg-gray-600 rounded-md mb-2 flex items-center w-[100%]"
         style={{ height: options.props.itemSize + "px" }}
       >
