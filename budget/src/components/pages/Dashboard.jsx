@@ -55,11 +55,10 @@ export default function Dashboard() {
         </div>
       </div>
       <div className="flex items-center md:flex-row flex-col gap-2 ">
-        <div className="bg-white w-[100%] md:w-[50%] h-[290px] rounded-md max-w-[600px] md:max-w-none">
+        <div className=" w-[100%] md:w-[50%] h-[290px] rounded-md max-w-[600px] md:max-w-none">
           <RadarApexChart />
         </div>
-        <div className="bg-white w-[100%] md:w-[50%] h-[290px] rounded-md max-w-[600px] md:max-w-none overflow-hidden">
-          {/* <div className="bg-gray-700 w-[100%] md:w-[50%] h-[290px] rounded-md max-w-[600px] md:max-w-none "> */}
+        <div className=" w-[100%] md:w-[50%] h-[290px] rounded-md max-w-[600px] md:max-w-none overflow-hidden">
           <LineApexChart />
         </div>
       </div>

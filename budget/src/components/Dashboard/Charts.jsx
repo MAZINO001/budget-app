@@ -1,5 +1,5 @@
 /********************************** custome code************************************/
-const radardata = [20, 100, 40, 30, 50, 80];
+const radardata = [20, 100, 40, 30, 50];
 const redarCategories = [
   "housing",
   "utilities",
@@ -79,7 +79,7 @@ export function RadarApexChart() {
         categories: redarCategories,
       },
       yaxis: {
-        tickAmount: 6,
+        tickAmount: 5,
         labels: {
           formatter: function (val, i) {
             if (i % 2 === 0) {
@@ -131,6 +131,7 @@ export function LineApexChart() {
       },
       dataLabels: {
         enabled: false,
+        // enabled: true,
       },
       stroke: {
         curve: "smooth",
@@ -140,9 +141,9 @@ export function LineApexChart() {
         categories: areaCategories,
       },
       title: {
-        text: "this month spending ", // Set your chart title
+        text: "this month spending ",
         style: {
-          color: "#fff", // Black color for the title
+          color: "#fff",
         },
       },
       tooltip: {
