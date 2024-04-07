@@ -15,10 +15,10 @@ export default function Dashboard() {
             <CreditCard2 />
           </div>
         </div>
-        <div className=" w-[100%] md:w-[35%] h-[250px] max-w-[600px] md:max-w-none rounded-md mb-2">
+        <div className=" w-[100%] md:w-[35%] h-[250px] max-w-[600px] md:max-w-none rounded-md mb-2 md:mb-0">
           <Popular />
         </div>
-        <div className=" w-[100%] md:w-[35%] h-[250px] max-w-[600px] md:max-w-none rounded-md md:mb-0 ">
+        <div className=" w-[100%] md:w-[35%] h-[250px] max-w-[600px] md:max-w-none rounded-md  ">
           <History />
         </div>
       </div>

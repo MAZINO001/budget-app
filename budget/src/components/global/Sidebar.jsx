@@ -25,8 +25,8 @@ export default function Sidebar() {
   }, []);
 
   return (
-    <div className="md:w-[50px] lg:w-[150px] h-[45px] max-h-[592px] md:h-[100vh] flex flex-row md:flex-col justify-between items-center bg-gray-700 ml-2 mr-2 md:mr-0 mt-2 rounded-md ">
-      <Link to="/" className="flex items-center gap-2 md:ml-0 ml-2 md:mt-2">
+    <div className="md:w-[50px] lg:w-[150px] h-[45px] max-h-[592px] md:h-[100vh] flex flex-row md:flex-col justify-between  bg-gray-700 ml-2 mr-2 md:mr-0 mt-2 rounded-md ">
+      <Link to="/" className="flex items-center justify-center gap-2 md:ml-0 ml-2 md:mt-2">
         <GiWallet className="text-2xl font-semibold tracking-wide cursor-pointer" />
         <span className="text-lg none sm:hidden lg:flex flex">CashCare</span>
       </Link>
@@ -78,7 +78,7 @@ export default function Sidebar() {
 
       <Link
         to="/settings"
-        className={`flex items-center gap-2 text-3xl cursor-pointer md:mb-2 ${
+        className={`flex items-center ml-4 gap-2 text-3xl cursor-pointer md:mb-2 ${
           location.pathname === "/settings" ? "text-red-500" : ""
         }`}
       >

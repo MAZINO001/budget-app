@@ -17,7 +17,7 @@ export function Rnage() {
         options={cities}
         optionLabel="range"
         placeholder="Month"
-        className="w-[7.6rem] h-[33px] flex items-center bg-gray-700 "
+        className="w-[7.6rem] h-[33px] flex items-center  text-white"
       />
     </div>
   );

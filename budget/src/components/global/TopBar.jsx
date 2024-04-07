@@ -15,7 +15,7 @@ export default function TopBar() {
 
   return (
     <div className=" w-full h-[50px] flex justify-between items-center px-2 py-2 ">
-      <div className="w-[180px] h-[33px] bg-gray-700 flex items-center justify-center rounded-md text-sm p-1">
+      <div className=" w-[180px] md:w-[253px] text-sm md:text-md h-[33px] bg-gray-700 flex items-center justify-center rounded-md  p-1">
         <span>
           {lastTransaction.Description} : {lastTransaction.Amount} $
         </span>
