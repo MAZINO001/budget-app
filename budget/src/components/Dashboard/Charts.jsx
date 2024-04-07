@@ -1,13 +1,12 @@
 // /********************************** custome code************************************/
-// const radardata = [20, 100, 40, 30, 50];
-// const redarCategories = [
-//   "housing",
-//   "utilities",
-//   "transportation",
-//   "subscriptions",
-//   "bills",
-//   "groceries",
-// ];
+// import Data from "../../Data/fakeData.json";
+// const sortedData = Data.sort((a, b) => b.Amount - a.Amount);
+// const top5MostExpensiveItems = sortedData.slice(0, 6);
+// const mostExpensiveAmount = top5MostExpensiveItems.map((item) => item.Amount);
+// const mostExpensiveCategories = top5MostExpensiveItems.map(
+//   (item) => item.Category
+// );
+// const MonthlyAmount = 1500;
 // //area chart
 // const areaData1 = [10, 20, 31, 40, 28, 51, 80, 47, 42, 109, 100, 88];
 // const areaData2 = [15, 25, 30, 45, 55, 70, 85, 95, 60, 75, 85, 95];
@@ -33,7 +32,7 @@
 //     series: [
 //       {
 //         name: "Series 1",
-//         data: radardata,
+//         data: mostExpensiveAmount,
 //       },
 //     ],
 //     options: {
@@ -42,13 +41,14 @@
 //         type: "radar",
 //       },
 //       dataLabels: {
-//         enabled: false,
+//         enabled: true,
 //       },
 //       plotOptions: {
 //         radar: {
 //           size: 115,
 //           polygons: {
 //             strokeColors: "#000",
+
 //             fill: {
 //               // colors: ["#fff", "#fff"],
 //             },
@@ -56,7 +56,7 @@
 //         },
 //       },
 //       title: {
-//         text: "Your Most spenging",
+//         text: "Most spenging",
 //         style: {
 //           color: "#fff",
 //         },
@@ -76,10 +76,10 @@
 //         },
 //       },
 //       xaxis: {
-//         categories: redarCategories,
+//         categories: mostExpensiveCategories,
 //       },
 //       yaxis: {
-//         tickAmount: 5,
+//         tickAmount: 6,
 //         labels: {
 //           formatter: function (val, i) {
 //             if (i % 2 === 0) {
@@ -89,6 +89,7 @@
 //             }
 //           },
 //         },
+//         max: MonthlyAmount,
 //       },
 //     },
 //   };
@@ -101,7 +102,7 @@
 //           series={state.series}
 //           type="radar"
 //           className="bg-gray-700 rounded-md"
-//           height={277}
+//           height={275}
 //         />
 //       </div>
 //       <div id="html-dist"></div>
@@ -112,6 +113,7 @@
 // //second line chart
 
 // import React from "react";
+
 // export function LineApexChart() {
 //   const [chartData, setChartData] = React.useState({
 //     series: [
@@ -130,18 +132,22 @@
 //         type: "area",
 //       },
 //       dataLabels: {
-//         enabled: false,
-//         // enabled: true,
+//         enabled: true,
 //       },
 //       stroke: {
 //         curve: "smooth",
 //       },
 //       xaxis: {
-//         type: "monthes",
+//         type: "category",
 //         categories: areaCategories,
 //       },
+//       yaxis: {
+//         title: {
+//           text: "Spending",
+//         },
+//       },
 //       title: {
-//         text: "this month spending ",
+//         text: "This Month Spending",
 //         style: {
 //           color: "#fff",
 //         },
@@ -161,7 +167,7 @@
 //           options={chartData.options}
 //           series={chartData.series}
 //           type="area"
-//           height={277}
+//           height={380}
 //           className="bg-gray-700"
 //         />
 //       </div>
@@ -171,12 +177,15 @@
 // }
 /********************************** custome code************************************/
 import Data from "../../Data/fakeData.json";
-
-const dataArray = Data.map((item) => item.Category);
-const readerCategories = [...new Set(dataArray)];
-
-const radardata = [20, 100, 40, 30, 50];
+const sortedData = Data.sort((a, b) => b.Amount - a.Amount);
+const top5MostExpensiveItems = sortedData.slice(0, 6);
+const mostExpensiveAmount = top5MostExpensiveItems.map((item) => item.Amount);
+const mostExpensiveCategories = top5MostExpensiveItems.map(
+  (item) => item.Category
+);
+const MonthlyAmount = 1500;
 //area chart
+
 const areaData1 = [10, 20, 31, 40, 28, 51, 80, 47, 42, 109, 100, 88];
 const areaData2 = [15, 25, 30, 45, 55, 70, 85, 95, 60, 75, 85, 95];
 const areaCategories = [
@@ -201,7 +210,7 @@ export function RadarApexChart() {
     series: [
       {
         name: "Series 1",
-        data: radardata,
+        data: mostExpensiveAmount,
       },
     ],
     options: {
@@ -210,13 +219,14 @@ export function RadarApexChart() {
         type: "radar",
       },
       dataLabels: {
-        enabled: false,
+        enabled: true,
       },
       plotOptions: {
         radar: {
           size: 115,
           polygons: {
             strokeColors: "#000",
+
             fill: {
               // colors: ["#fff", "#fff"],
             },
@@ -224,7 +234,7 @@ export function RadarApexChart() {
         },
       },
       title: {
-        text: "Your Most spenging",
+        text: "Most spenging",
         style: {
           color: "#fff",
         },
@@ -244,10 +254,10 @@ export function RadarApexChart() {
         },
       },
       xaxis: {
-        categories: readerCategories,
+        categories: mostExpensiveCategories,
       },
       yaxis: {
-        tickAmount: 5,
+        tickAmount: 6,
         labels: {
           formatter: function (val, i) {
             if (i % 2 === 0) {
@@ -257,6 +267,7 @@ export function RadarApexChart() {
             }
           },
         },
+        max: MonthlyAmount,
       },
     },
   };
@@ -269,7 +280,7 @@ export function RadarApexChart() {
           series={state.series}
           type="radar"
           className="bg-gray-700 rounded-md"
-          height={277}
+          height={275}
         />
       </div>
       <div id="html-dist"></div>
@@ -280,6 +291,7 @@ export function RadarApexChart() {
 //second line chart
 
 import React from "react";
+
 export function LineApexChart() {
   const [chartData, setChartData] = React.useState({
     series: [
@@ -298,18 +310,22 @@ export function LineApexChart() {
         type: "area",
       },
       dataLabels: {
-        enabled: false,
-        // enabled: true,
+        enabled: true,
       },
       stroke: {
         curve: "smooth",
       },
       xaxis: {
-        type: "monthes",
+        type: "category",
         categories: areaCategories,
       },
+      yaxis: {
+        title: {
+          text: "Spending",
+        },
+      },
       title: {
-        text: "this month spending ",
+        text: "This Month Spending",
         style: {
           color: "#fff",
         },
@@ -329,7 +345,7 @@ export function LineApexChart() {
           options={chartData.options}
           series={chartData.series}
           type="area"
-          height={277}
+          height={380}
           className="bg-gray-700"
         />
       </div>

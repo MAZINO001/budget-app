@@ -14,17 +14,20 @@ export default function TopBar() {
   const lastTransaction = sortedData[0];
 
   return (
-    <div className=" w-full h-[50px] flex justify-between items-center px-2 py-2">
-      <div className="w-[200px] h-[33px] bg-gray-700 flex items-center justify-center rounded-md text-sm">
+    <div className=" w-full h-[50px] flex justify-between items-center px-2 py-2 ">
+      <div className="w-[180px] h-[33px] bg-gray-700 flex items-center justify-center rounded-md text-sm p-1">
         <span>
           {lastTransaction.Description} : {lastTransaction.Amount} $
         </span>
       </div>
       <div className="flex items-center gap-4 ">
-        <div className=" pl-4 flex items-center gap-4 rounded-md text-white">
+        <div className=" ml-4 flex items-center gap-4 rounded-md bg-gray-700 ">
           <Rnage />
         </div>
-        <div className="relative" onClick={() => setPopUp((state) => !state)}>
+        <div
+          className="relative mr-2 md:mr-0"
+          onClick={() => setPopUp((state) => !state)}
+        >
           <span className="absolute bottom-4 left-4">
             <BadgeIcon />
           </span>
@@ -52,7 +55,7 @@ export default function TopBar() {
         </div>
         <img
           src={avatar}
-          className="w-[33px] h-[33px] rounded-full cursor-pointer"
+          className="w-[33px] h-[33px] rounded-full cursor-pointer hidden md:block "
           alt="avatar"
         />
       </div>

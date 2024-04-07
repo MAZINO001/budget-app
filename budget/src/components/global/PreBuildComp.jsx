@@ -10,14 +10,14 @@ export function Rnage() {
   const cities = [{ range: "Month" }, { range: "Week" }, { range: "Day" }];
 
   return (
-    <div className="card flex justify-content-center">
+    <div className="card flex justify-content-center ">
       <Dropdown
         value={selectedCity}
         onChange={(e) => setSelectedCity(e.value)}
         options={cities}
         optionLabel="range"
         placeholder="Month"
-        className="w-full md:w-14rem h-[33px] flex items-center bg-gray-700 "
+        className="w-[7.6rem] h-[33px] flex items-center bg-gray-700 "
       />
     </div>
   );
