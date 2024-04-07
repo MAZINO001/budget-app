@@ -88,11 +88,6 @@ export default function HistoryPreBiuld1() {
   );
 }
 
-/************************* History********************** */
-
-/************************* Popular********************** */
-
-// add amount
 
 //badges in the ring thing :)
 import { Badge } from "primereact/badge";

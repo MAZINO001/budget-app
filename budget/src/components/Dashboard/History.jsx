@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { HistoryPreBiuld2 } from "../global/PreBuildComp";
-
+import HistoryComp from "../../Pre-buildComponent/History";
 export default function History() {
   return (
     <div className="bg-gray-700 rounded-md ">
@@ -16,7 +16,7 @@ export default function History() {
       </div>
 
       <hr className="pb-2" />
-      <HistoryPreBiuld2 />
+      <HistoryComp />
     </div>
   );
 }

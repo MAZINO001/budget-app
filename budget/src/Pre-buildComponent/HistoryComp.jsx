@@ -1,16 +1,16 @@
+import Data from "../Data/fakeData.json";
 import { VirtualScroller } from "primereact/virtualscroller";
-export function Popular() {
-  const top10Items = Data.sort((a, b) => b.Amount - a.Amount).slice(0, 10);
+import { classNames } from "primereact/utils";
 
-  const items = top10Items.map((item) => (
-    <div
-      key={item.index}
-      className="flex items-center justify-between w-[100%] px-2"
-    >
+export default function HistoryComp() {
+  const items = Data.map((item, index) => (
+    <div key={index} className="flex items-center justify-between w-full px-2">
       <span>{item.Category}</span>
+      <span>{item.Time}</span>
       <span>{item.Amount}$</span>
     </div>
   ));
+
   const itemTemplate = (item, options) => {
     const className = classNames("flex align-items-center p-2", {
       "surface-hover": options.odd,
@@ -18,7 +18,7 @@ export function Popular() {
 
     return (
       <div
-        className="className bg-gray-600 rounded-md mb-2 flex items-center w-[100%]"
+        className={className}
         style={{ height: options.props.itemSize + "px" }}
       >
         {item}
