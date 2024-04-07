@@ -4,7 +4,7 @@ import { InputNumber } from "primereact/inputnumber";
 import { InputTextarea } from "primereact/inputtextarea";
 import { useState } from "react";
 
-export function Input() {
+export function SavingsInput() {
   const [value2, setValue2] = useState(20);
 
   return (
@@ -26,7 +26,7 @@ export function Input() {
   );
 }
 /********************************* */
-export function Textarea() {
+export function SavingsTextarea() {
   const [value, setValue] = useState("");
 
   return (
@@ -44,7 +44,7 @@ export function Textarea() {
 }
 /********************************* */
 
-export function Durations() {
+export function SavingsDurations() {
   const [dates, setDates] = useState(null);
 
   return (
@@ -64,7 +64,7 @@ export function Durations() {
   );
 }
 /********************************* */
-export function AddButton() {
+export function SavingsAddButton() {
   return (
     <div className="card flex items-center justify-center mt-2">
       <Button

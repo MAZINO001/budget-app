@@ -2,7 +2,7 @@ import { Button } from "primereact/button";
 import { InputNumber } from "primereact/inputnumber";
 import { useState } from "react";
 
-export function Input3() {
+export function BudgetInput() {
   const [value3, setValue3] = useState(20);
 
   return (
@@ -24,7 +24,7 @@ export function Input3() {
   );
 }
 /****************************** */
-export function AddButton2() {
+export function BudgetAddButton() {
   return (
     <div className="card flex items-center justify-center mt-2">
       <Button

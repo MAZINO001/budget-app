@@ -28,7 +28,7 @@ export function TransactionInput() {
   );
 }
 /****************************** */
-export function AddButton() {
+export function TransactionAddButton() {
   return (
     <div className="card flex items-center justify-center">
       <Button
@@ -39,7 +39,7 @@ export function AddButton() {
   );
 }
 /****************************** */
-export function Textarea() {
+export function TransactionTextarea() {
   const [value, setValue] = useState("");
 
   return (
@@ -74,7 +74,7 @@ const Expenses = [
   { name: "education", icon: "" },
 ];
 
-export function Category() {
+export function TransactionCategory() {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const categoryOptionTemplate = (option) => (
@@ -107,7 +107,7 @@ export function Category() {
 }
 /****************************** */
 
-export function Date() {
+export function TransactionDate() {
   const [date, setDate] = useState(null);
   return (
     <div className="card flex flex-wrap gap-3 p-fluid">
