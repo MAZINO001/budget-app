@@ -12,9 +12,12 @@ export default function HistoryComp() {
   ));
 
   const itemTemplate = (item, options) => {
-    const className = classNames("flex align-items-center p-2", {
-      "surface-hover": options.odd,
-    });
+    const className = classNames(
+      "flex align-items-center p-2 bg-gray-600 mb-2 rounded-md",
+      {
+        "surface-hover": options.odd,
+      }
+    );
 
     return (
       <div

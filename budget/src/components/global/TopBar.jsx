@@ -1,13 +1,24 @@
 import { GoBellFill } from "react-icons/go";
 import avatar from "../../assets/avatar.jpg";
 import { BadgeIcon, Rnage } from "./PreBuildComp";
+import Data from "../../Data/fakeData.json";
 import { useState } from "react";
 export default function TopBar() {
   const [PopUp, setPopUp] = useState(false);
+
+  const sortedData = Data.sort((a, b) => {
+    const dateA = new Date(`${a.Date} ${a.Time}`);
+    const dateB = new Date(`${b.Date} ${b.Time}`);
+    return dateB - dateA;
+  });
+  const lastTransaction = sortedData[0];
+
   return (
     <div className=" w-full h-[50px] flex justify-between items-center px-2 py-2">
-      <div className="w-[200px] h-[33px] bg-gray-700 flex items-center justify-center rounded-md">
-        Food at KFC 50$
+      <div className="w-[200px] h-[33px] bg-gray-700 flex items-center justify-center rounded-md text-sm">
+        <span>
+          {lastTransaction.Description} : {lastTransaction.Amount} $
+        </span>
       </div>
       <div className="flex items-center gap-4 ">
         <div className=" pl-4 flex items-center gap-4 rounded-md text-white">
