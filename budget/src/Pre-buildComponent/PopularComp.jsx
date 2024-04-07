@@ -1,8 +1,8 @@
 import { VirtualScroller } from 'primereact/virtualscroller';
-import classNames from 'classnames';
+import { classNames } from "primereact/utils";
 import Data from '../Data/fakeData.json';
 
-export function PopularComp() {
+export default function PopularComp() {
   const top10Items = Data.sort((a, b) => b.Amount - a.Amount).slice(0, 10);
 
   const items = top10Items.map((item, index) => (

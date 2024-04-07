@@ -1,14 +1,10 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { IoMdRestaurant } from "react-icons/io";
 import "primereact/resources/themes/tailwind-light/theme.css";
-import { InputNumber } from "primereact/inputnumber";
-import { Button } from "primereact/button";
-import { InputTextarea } from "primereact/inputtextarea";
-import { Calendar } from "primereact/calendar";
 import { Dropdown } from "primereact/dropdown";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Data from "../../Data/fakeData.json";
+
 export function Rnage() {
   const [selectedCity, setSelectedCity] = useState(null);
   const cities = [{ range: "Month" }, { range: "Week" }, { range: "Day" }];
@@ -87,7 +83,6 @@ export default function HistoryPreBiuld1() {
     </div>
   );
 }
-
 
 //badges in the ring thing :)
 import { Badge } from "primereact/badge";

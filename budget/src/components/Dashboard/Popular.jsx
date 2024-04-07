@@ -1,4 +1,4 @@
-import PopularComp from "../../Pre-buildComponent/Popular";
+import PopularComp from "../../Pre-buildComponent/PopularComp";
 export default function Popular() {
   return (
     <div className="bg-gray-700 rounded-md">

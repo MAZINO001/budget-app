@@ -31,13 +31,13 @@ export default function AddNew() {
             add New transaction
           </h2>
           <TransactionInput />
-          <TransactionAddButton />
+          <TransactionCategory />
           <div className="flex itemx-center justify-between gap-2">
-            <TransactionTextarea />
-            <TransactionCategory />
+            <TransactionDate />
+            <TransactionTime />
           </div>
-          <TransactionDate />
-          <TransactionTime />
+          <TransactionTextarea />
+          <TransactionAddButton />
         </div>
       </div>
       <div className="w-[100%] md:w-[50%] h-[100%]">

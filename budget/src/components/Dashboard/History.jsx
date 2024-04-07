@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import { HistoryPreBiuld2 } from "../global/PreBuildComp";
-import HistoryComp from "../../Pre-buildComponent/History";
+import HistoryComp from "../../Pre-buildComponent/HistoryComp";
 export default function History() {
   return (
     <div className="bg-gray-700 rounded-md ">
