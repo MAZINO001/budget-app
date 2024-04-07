@@ -128,7 +128,7 @@ export function TransactionDate() {
 }
 
 /****************************** */
-export function Time() {
+export function TransactionTime() {
   const [date, setDate] = useState(null);
   return (
     <div className="card flex flex-wrap gap-3 p-fluid">
