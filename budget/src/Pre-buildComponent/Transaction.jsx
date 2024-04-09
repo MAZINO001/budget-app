@@ -6,14 +6,10 @@ import { InputTextarea } from "primereact/inputtextarea";
 import { useState } from "react";
 import { IoMdRestaurant } from "react-icons/io";
 import { updateTransaction } from "../components/Redux/Features/AddNewSlices/TransactionSlice";
-// import { useDispatch, useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
 export function TransactionInput() {
   const dispatch = useDispatch();
-  // const transaction = useSelector(
-  //   (state) => state.transactionSlice?.transaction || 0.0
-  // );
   const [localTransaction, setLocalTransaction] = useState("");
 
   const handleValueChange = (e) => {
@@ -148,13 +144,32 @@ export function TransactionTime() {
   );
 }
 /****************************** */
+import { useSelector } from "react-redux";
 export function TransactionAddButton() {
+  const amount = useSelector((state) => state.amount.transaction);
+  const time = useSelector((state) => state.amount.transaction);
+  const date = useSelector((state) => state.amount.transaction);
+  const description = useSelector((state) => state.amount.transaction);
+  const category = useSelector((state) => state.amount.transaction);
+
+  console.log(amount)
+  console.log(time)
+  console.log(date)
+  console.log(description)
+  console.log(category)
   return (
     <div className="card flex items-center justify-center">
       <Button
         label="Submit"
         className="w-[150px] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center absolute bottom-[5px] "
       />
+      {/* <div className="flex bg-blue-500 w-[300px] h-[400px] popupPosition rounded-md">
+        {amount}
+        {time}
+        {date}
+        {description}
+        {category}
+      </div> */}
     </div>
   );
 }

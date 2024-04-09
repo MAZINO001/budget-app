@@ -14,11 +14,11 @@ export const transactionSlice = createSlice({
   initialState,
   reducers: {
     updateTransaction: (state, action) => {
-      state.transaction = action.payload;
-      state.category = action.payload;
-      state.time = action.payload;
-      state.date = action.payload;
-      state.description = action.payload;
+      state.transaction = action.payload.transaction;
+      state.category = action.payload.category;
+      state.time = action.payload.time;
+      state.date = action.payload.date;
+      state.description = action.payload.description;
     },
   },
 });
