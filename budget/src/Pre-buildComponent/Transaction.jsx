@@ -5,19 +5,33 @@ import { InputNumber } from "primereact/inputnumber";
 import { InputTextarea } from "primereact/inputtextarea";
 import { useState } from "react";
 import { IoMdRestaurant } from "react-icons/io";
+import { updateTransaction } from "../components/Redux/Features/AddNewSlices/Slices";
+import { useDispatch, useSelector } from "react-redux";
 
 export function TransactionInput() {
-  const [Amount, setAmount] = useState(20);
+  const dispatch = useDispatch();
+  const transaction = useSelector(
+    (state) => state.transactionSlice?.transaction || 0.0
+  );
+  const [localTransaction, setLocalTransaction] = useState(transaction);
+
+  const handleValueChange = (e) => {
+    const newValue = e.value;
+    setLocalTransaction(newValue);
+    dispatch(updateTransaction({ transaction: newValue }));
+  };
+
+  console.log(localTransaction);
 
   return (
     <div className="card flex flex-wrap gap-3 p-fluid">
       <div className="flex-auto">
         <label htmlFor="Input" className="font-bold block mb-2">
-          Amount
+        Transaction Amount
         </label>
         <InputNumber
-          value={Amount}
-          onValueChange={(e) => setAmount(e.value)}
+          value={localTransaction}
+          onValueChange={handleValueChange}
           placeholder="$0.00"
           mode="currency"
           currency="USD"

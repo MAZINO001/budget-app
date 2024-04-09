@@ -1,19 +1,30 @@
 import { Button } from "primereact/button";
 import { InputNumber } from "primereact/inputnumber";
 import { useState } from "react";
+import { updateBudget } from "../components/Redux/Features/AddNewSlices/Slices";
+import { useDispatch, useSelector } from "react-redux";
 
 export function BudgetInput() {
-  const [value3, setValue3] = useState(20);
+  const dispatch = useDispatch();
+  const budegt = useSelector((state) => state.budgetSlice?.budegt || 0.0);
+  const [localBudegt, setLocalBudegt] = useState(budegt);
 
+  const handleValueChange = (e) => {
+    const newValue = e.value;
+    setLocalBudegt(newValue);
+    dispatch(updateBudget({ budegt: newValue }));
+  };
+
+  console.log(localBudegt);
   return (
     <div className="card flex flex-wrap gap-3 p-fluid ">
       <div className="flex-auto">
         <label htmlFor="amount2" className="font-bold block mb-2">
-          Amount
+          Budegt Amount
         </label>
         <InputNumber
-          value={value3}
-          onValueChange={(e) => setValue3(e.value)}
+          value={localBudegt}
+          onValueChange={handleValueChange}
           placeholder="$0.00"
           mode="currency"
           currency="USD"

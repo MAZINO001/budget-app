@@ -3,19 +3,31 @@ import { Calendar } from "primereact/calendar";
 import { InputNumber } from "primereact/inputnumber";
 import { InputTextarea } from "primereact/inputtextarea";
 import { useState } from "react";
+import { updateSaving } from "../components/Redux/Features/AddNewSlices/Slices";
+import { useDispatch, useSelector } from "react-redux";
 
 export function SavingsInput() {
-  const [value2, setValue2] = useState(20);
+  const dispatch = useDispatch();
+  const saving = useSelector((state) => state.savingSlice?.saving || 0.0);
+  const [localSaving, setLocalSaving] = useState(saving);
+
+  const handleValueChange = (e) => {
+    const newValue = e.value;
+    setLocalSaving(newValue);
+    dispatch(updateSaving({ saving: newValue }));
+  };
+
+  console.log(localSaving);
 
   return (
     <div className="card flex flex-wrap gap-3 p-fluid">
       <div className="flex-auto">
         <label htmlFor="amount" className="font-bold block mb-2">
-          Amount
+          Saving Amount
         </label>
         <InputNumber
-          value={value2}
-          onValueChange={(e) => setValue2(e.value)}
+          value={localSaving}
+          onValueChange={handleValueChange}
           placeholder="$0.00"
           mode="currency"
           currency="USD"

@@ -1,16 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {
-  updateAmount,
-  updateTransaction,
-  updateSaving,
-  updateBudget,
+  amountSlice,
+  transactionSlice,
+  savingSlice,
+  budgetSlice,
 } from "./Features/AddNewSlices/Slices";
 
 export const store = configureStore({
   reducer: {
-    amount: updateAmount.reducer,
-    transaction: updateTransaction.reducer,
-    saving: updateSaving.reducer,
-    budget: updateBudget.reducer,
+    amount: amountSlice.reducer,
+    transaction: transactionSlice.reducer,
+    saving: savingSlice.reducer,
+    budget: budgetSlice.reducer,
   },
 });

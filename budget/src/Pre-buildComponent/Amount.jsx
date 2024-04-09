@@ -7,7 +7,7 @@ import { updateAmount } from "../components/Redux/Features/AddNewSlices/Slices";
 
 export function AmountInput() {
   const dispatch = useDispatch();
-  const amount = useSelector((state) => state.AmountSlice?.amount || 0.0);
+  const amount = useSelector((state) => state.amountSlice?.amount || 0.0);
   const [localAmount, setLocalAmount] = useState(amount);
 
   const handleValueChange = (e) => {
