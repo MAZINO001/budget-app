@@ -6,22 +6,21 @@ import { InputTextarea } from "primereact/inputtextarea";
 import { useState } from "react";
 import { IoMdRestaurant } from "react-icons/io";
 import { updateTransaction } from "../components/Redux/Features/AddNewSlices/TransactionSlice";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 export function TransactionInput() {
   const dispatch = useDispatch();
-  const transaction = useSelector(
-    (state) => state.transactionSlice?.transaction || 0.0
-  );
-  const [localTransaction, setLocalTransaction] = useState(transaction);
+  // const transaction = useSelector(
+  //   (state) => state.transactionSlice?.transaction || 0.0
+  // );
+  const [localTransaction, setLocalTransaction] = useState("");
 
   const handleValueChange = (e) => {
     const newValue = e.value;
     setLocalTransaction(newValue);
     dispatch(updateTransaction({ transaction: newValue }));
   };
-
-  console.log(localTransaction);
 
   return (
     <div className="card flex flex-wrap gap-3 p-fluid">
@@ -41,29 +40,18 @@ export function TransactionInput() {
     </div>
   );
 }
-/****************************** */
-export function TransactionAddButton() {
-  return (
-    <div className="card flex items-center justify-center">
-      <Button
-        label="Submit"
-        className="w-[150px] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center absolute bottom-[5px] "
-      />
-    </div>
-  );
-}
+
 /****************************** */
 export function TransactionTextarea() {
-  const [value, setValue] = useState("");
-
+  const [localDescription, setLocalDescription] = useState("");
   return (
     <div className="card flex flex-col justify-content-center">
       <label htmlFor="Description" className="font-bold block mb-2">
         Description
       </label>
       <InputTextarea
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
+        value={localDescription}
+        onChange={(e) => setLocalDescription(e.target.value)}
         style={{ padding: " 2px 12px", height: "70px" }}
       />
     </div>
@@ -89,11 +77,9 @@ const Expenses = [
 ];
 
 export function TransactionCategory() {
-  const [selectedCategory, setSelectedCategory] = useState(null);
-
+  const [localCategory, setLocalCategory] = useState("");
   const categoryOptionTemplate = (option) => (
     <div className="flex align-items-center">
-      {/* remove it later  */}
       <IoMdRestaurant className="text-[28px] text-red-500 border-red-500 rounded-full border mr-2" />
       <div>{option.name}</div>
     </div>
@@ -106,13 +92,12 @@ export function TransactionCategory() {
       </label>
 
       <Dropdown
-        value={selectedCategory}
-        onChange={(e) => setSelectedCategory(e.value)}
+        value={localCategory}
+        onChange={(e) => setLocalCategory(e.target.value)}
         options={Expenses} // Use Expenses array for options
         optionLabel="name"
         placeholder="Select a Category"
         filter
-        // style={{ height: "40px" }}
         className="h-[40px] flex items-center"
         itemTemplate={categoryOptionTemplate}
       />
@@ -122,7 +107,7 @@ export function TransactionCategory() {
 /****************************** */
 
 export function TransactionDate() {
-  const [date, setDate] = useState(null);
+  const [localDate, setLocalDate] = useState("");
   return (
     <div className="card flex flex-wrap gap-3 p-fluid">
       <div className="flex-auto">
@@ -131,9 +116,9 @@ export function TransactionDate() {
         </label>
         <Calendar
           id="buttondisplay"
-          value={date}
+          value={localDate}
           placeholder="Add Date"
-          onChange={(e) => setDate(e.value)}
+          onChange={(e) => setLocalDate(e.target.value)}
           style={{ height: "40px" }}
         />
       </div>
@@ -143,7 +128,7 @@ export function TransactionDate() {
 
 /****************************** */
 export function TransactionTime() {
-  const [date, setDate] = useState(null);
+  const [localTime, setLocalTime] = useState("");
   return (
     <div className="card flex flex-wrap gap-3 p-fluid">
       <div className="flex-auto">
@@ -151,8 +136,8 @@ export function TransactionTime() {
           Time
         </label>
         <Calendar
-          value={date}
-          onChange={(e) => setDate(e.value)}
+          value={localTime}
+          onChange={(e) => setLocalTime(e.target.value)}
           timeOnly
           placeholder="Add time"
           icon={() => <i className="pi pi-clock" />}
@@ -163,3 +148,13 @@ export function TransactionTime() {
   );
 }
 /****************************** */
+export function TransactionAddButton() {
+  return (
+    <div className="card flex items-center justify-center">
+      <Button
+        label="Submit"
+        className="w-[150px] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center absolute bottom-[5px] "
+      />
+    </div>
+  );
+}

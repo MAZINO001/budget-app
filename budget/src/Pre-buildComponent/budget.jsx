@@ -1,7 +1,7 @@
 import { Button } from "primereact/button";
 import { InputNumber } from "primereact/inputnumber";
 import { useState } from "react";
-import { updateBudget } from "../components/Redux/Features/AddNewSlices/TransactionSlice";
+import { updateBudget } from "../components/Redux/Features/AddNewSlices/BudegtSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 export function BudgetInput() {

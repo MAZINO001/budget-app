@@ -3,7 +3,7 @@ import { Calendar } from "primereact/calendar";
 import { InputNumber } from "primereact/inputnumber";
 import { InputTextarea } from "primereact/inputtextarea";
 import { useState } from "react";
-import { updateSaving } from "../components/Redux/Features/AddNewSlices/TransactionSlice";
+import { updateSaving } from "../components/Redux/Features/AddNewSlices/SavingSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 export function SavingsInput() {

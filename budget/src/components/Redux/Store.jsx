@@ -1,10 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import {
-  amountSlice,
-  transactionSlice,
-  savingSlice,
-  budgetSlice,
-} from "./Features/AddNewSlices/Slices";
+import { amountSlice } from "./Features/AddNewSlices/AmountSlice";
+import { transactionSlice } from "./Features/AddNewSlices/TransactionSlice";
+import { savingSlice } from "./Features/AddNewSlices/SavingSlice";
+import { budgetSlice } from "./Features/AddNewSlices/BudegtSlice";
 
 export const store = configureStore({
   reducer: {

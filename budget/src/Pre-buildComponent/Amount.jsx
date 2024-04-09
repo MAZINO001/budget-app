@@ -3,7 +3,7 @@ import { Button } from "primereact/button";
 import { InputNumber } from "primereact/inputnumber";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateAmount } from "../components/Redux/Features/AddNewSlices/Slices";
+import { updateAmount } from "../components/Redux/Features/AddNewSlices/AmountSlice";
 
 export function AmountInput() {
   const dispatch = useDispatch();
