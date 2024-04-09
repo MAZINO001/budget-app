@@ -1,9 +1,22 @@
+/* eslint-disable no-unused-vars */
 import { Button } from "primereact/button";
 import { InputNumber } from "primereact/inputnumber";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { updateAmount } from "../components/Redux/Features/AddNewSlices/Slices";
 
 export function AmountInput() {
-  const [Amount, setAmount] = useState(20);
+  const dispatch = useDispatch();
+  const amount = useSelector((state) => state.AmountSlice?.amount || 0.0);
+  const [localAmount, setLocalAmount] = useState(amount);
+
+  const handleValueChange = (e) => {
+    const newValue = e.value;
+    setLocalAmount(newValue);
+    dispatch(updateAmount({ amount: newValue }));
+  };
+
+  console.log(localAmount);
 
   return (
     <div className="card flex flex-wrap gap-3 p-fluid">
@@ -12,8 +25,8 @@ export function AmountInput() {
           Amount
         </label>
         <InputNumber
-          value={Amount}
-          onValueChange={(e) => setAmount(e.value)}
+          value={localAmount}
+          onValueChange={handleValueChange}
           placeholder="$0.00"
           mode="currency"
           currency="USD"
