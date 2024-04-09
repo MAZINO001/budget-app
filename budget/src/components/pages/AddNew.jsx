@@ -21,16 +21,10 @@ export default function AddNew() {
     <div className="flex flex-col md:flex-row items-center gap-2  md:h-[100%]  mx-2  text-black mb-16 md:mb-0">
       <div className="w-[100%] md:w-[50%] h-[100%]">
         <div className="bg-gray-700 h-[140px] md:h-[25%] px-2 flex flex-col gap-y-2 rounded-md relative mb-2 ">
-          <h2 className="capitalize text-center text-lg text-white font-bold tracking-wider mb-[-25px]">
-            add Amount
-          </h2>
           <AmountInput />
           <AmountAddButton />
         </div>
         <div className="bg-gray-700 h-[410px] md:h-[73.6%] px-2 flex flex-col gap-y-2 rounded-md relative">
-          <h2 className="capitalize text-center text-lg text-white font-bold tracking-wider mb-[-25px]">
-            add New transaction
-          </h2>
           <TransactionInput />
           <TransactionCategory />
           <div className="flex itemx-center justify-between gap-2">
@@ -43,18 +37,12 @@ export default function AddNew() {
       </div>
       <div className="w-[100%] md:w-[50%] h-[100%]">
         <div className="bg-gray-700 h-[285px] md:h-[60%] rounded-md p-2  mb-2 relative">
-          <h2 className="capitalize text-center text-lg text-white font-bold tracking-wider mb-[-25px]">
-            add savings
-          </h2>
           <SavingsInput />
           <SavingsTextarea />
           <SavingsDurations />
           <SavingsAddButton />
         </div>
         <div className="bg-gray-700 h-[150px] md:h-[38.5%] rounded-md p-2 relative">
-          <h2 className="capitalize text-center text-lg text-white font-bold tracking-wider mb-[-25px]">
-            add monthly budget
-          </h2>
           <BudgetInput />
           <BudgetAddButton />
         </div>

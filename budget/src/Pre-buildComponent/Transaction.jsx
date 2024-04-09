@@ -5,7 +5,7 @@ import { InputNumber } from "primereact/inputnumber";
 import { InputTextarea } from "primereact/inputtextarea";
 import { useState } from "react";
 import { IoMdRestaurant } from "react-icons/io";
-import { updateTransaction } from "../components/Redux/Features/AddNewSlices/Slices";
+import { updateTransaction } from "../components/Redux/Features/AddNewSlices/TransactionSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 export function TransactionInput() {
@@ -27,7 +27,7 @@ export function TransactionInput() {
     <div className="card flex flex-wrap gap-3 p-fluid">
       <div className="flex-auto">
         <label htmlFor="Input" className="font-bold block mb-2">
-        Transaction Amount
+          Transaction Amount
         </label>
         <InputNumber
           value={localTransaction}
