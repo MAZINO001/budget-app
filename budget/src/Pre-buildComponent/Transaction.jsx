@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Button } from "primereact/button";
 import { Calendar } from "primereact/calendar";
 import { Dropdown } from "primereact/dropdown";
@@ -152,11 +153,6 @@ export function TransactionAddButton() {
   const description = useSelector((state) => state.amount.transaction);
   const category = useSelector((state) => state.amount.transaction);
 
-  console.log(amount)
-  console.log(time)
-  console.log(date)
-  console.log(description)
-  console.log(category)
   return (
     <div className="card flex items-center justify-center">
       <Button

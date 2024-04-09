@@ -2,11 +2,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  transaction: 0,
-  category: "",
-  time: "",
-  date: "",
-  description: "",
+  transaction: 10,
+  category: "somthing",
+  time: "12:10",
+  date: "10/10/2020",
+  description: "this is a test",
 };
 
 export const transactionSlice = createSlice({
