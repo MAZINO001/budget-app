@@ -4,12 +4,11 @@ import { InputNumber } from "primereact/inputnumber";
 import { InputTextarea } from "primereact/inputtextarea";
 import { useState } from "react";
 import { updateSaving } from "../components/Redux/Features/AddNewSlices/SavingSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 export default function Savings() {
   const dispatch = useDispatch();
-  const saving = useSelector((state) => state.savingSlice?.saving || 0.0);
-  const [localSaving, setLocalSaving] = useState(saving);
+  const [localSaving, setLocalSaving] = useState(0);
   const [description, setDescription] = useState("");
   const [dates, setDates] = useState(null);
   const [isActive, setIsActive] = useState(false);
@@ -48,11 +47,6 @@ export default function Savings() {
     );
   };
 
-  const handleDescriptionChange = (e) => {
-    const newValue = e.target.value;
-    setDescription(newValue);
-  };
-
   const togglePanel = () => {
     setIsActive(!isActive);
   };
@@ -78,7 +72,7 @@ export default function Savings() {
         </label>
         <InputTextarea
           value={description}
-          onChange={handleDescriptionChange}
+          onChange={(e) => setDescription(e.value)}
           style={{ padding: " 2px 12px", height: "70px" }}
         />
       </div>

@@ -199,7 +199,7 @@ import { Dropdown } from "primereact/dropdown";
 import { InputNumber } from "primereact/inputnumber";
 import { InputTextarea } from "primereact/inputtextarea";
 import { IoMdRestaurant } from "react-icons/io";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateTransaction } from "../components/Redux/Features/AddNewSlices/TransactionSlice";
 
 const Expenses = [
