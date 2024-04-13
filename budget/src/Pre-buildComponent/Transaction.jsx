@@ -223,11 +223,6 @@ const Expenses = [
 export default function Transaction() {
   const [Active, setActive] = useState(false);
   const dispatch = useDispatch();
-  // const amount = useSelector((state) => state.amount.transaction);
-  // const time = useSelector((state) => state.amount.transaction);
-  // const date = useSelector((state) => state.amount.transaction);
-  // const description = useSelector((state) => state.amount.transaction);
-  // const category = useSelector((state) => state.amount.transaction);
   const [localTransaction, setLocalTransaction] = useState("");
   const [localTime, setLocalTime] = useState(new Date());
   const [localDate, setLocalDate] = useState(new Date());
@@ -255,17 +250,23 @@ export default function Transaction() {
     setActive(!Active);
   };
   const handleValueChange = () => {
+    const formattedTime = localTime.getHours().toString().padStart(2, '0') + ':' +
+                         localTime.getMinutes().toString().padStart(2, '0');
+    const formattedDate = localDate.getDate().toString().padStart(2, '0') + '/' +
+                          (localDate.getMonth() + 1).toString().padStart(2, '0') + '/' +
+                          localDate.getFullYear();
     dispatch(
       updateTransaction({
         transaction: localTransaction,
-        time: localTime,
-        date: localDate,
+        time: formattedTime,
+        date: formattedDate,
         description: localDescription,
         category: localCategory.name,
       })
     );
     togglepanel();
-  };
+  }
+  
 
   const categoryOptionTemplate = (option) => (
     <div className="flex align-items-center">

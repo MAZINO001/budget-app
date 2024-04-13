@@ -14,6 +14,10 @@ export const savingSlice = createSlice({
       state.saving = action.payload.saving;
       state.description = action.payload.description;
       state.date = action.payload.date;
+
+      console.log("Updated State:", state.saving);
+      console.log("Updated State:", state.description);
+      console.log("Updated State:", state.date);
     },
   },
 });

@@ -39,7 +39,13 @@ export default function Savings() {
   const handleValueChange = (e) => {
     const newValue = e.value;
     setLocalSaving(newValue);
-    dispatch(updateSaving({ saving: newValue }));
+    dispatch(
+      updateSaving({
+        saving: localSaving,
+        description: description,
+        date: dates,
+      })
+    );
   };
 
   const handleDescriptionChange = (e) => {
@@ -50,7 +56,6 @@ export default function Savings() {
   const togglePanel = () => {
     setIsActive(!isActive);
   };
-
   return (
     <div className="flex flex-wrap gap-3 p-fluid">
       <div className="flex-auto">
