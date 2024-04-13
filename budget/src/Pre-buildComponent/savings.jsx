@@ -66,17 +66,19 @@ export default function Savings() {
           style={{ height: "40px" }}
         />
       </div>
-      <div className="card flex flex-col justify-content-center">
-        <label htmlFor="description" className="font-bold block mb-2">
+
+      <div className="card flex flex-col justify-content-center w-[100%]">
+        <label htmlFor="Description" className="font-bold block mb-2">
           Description
         </label>
         <InputTextarea
           value={description}
           onChange={handleDescriptionChange}
-          style={{ padding: " 2px 12px", height: "40px" }}
+          style={{ padding: " 2px 12px", height: "70px" }}
         />
       </div>
-      <div className="card flex justify-content-center flex-col">
+
+      <div className="card flex justify-content-center flex-col ">
         <label htmlFor="duration" className="font-bold block mb-2">
           Duration
         </label>

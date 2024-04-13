@@ -40,6 +40,7 @@ export default function Budget() {
         <Button
           label="Submit"
           className="w-[150px] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center absolute bottom-[5px]"
+          onClick={togglepanel}
         />
       </div>
       {Active && (
