@@ -11,7 +11,9 @@ export const savingSlice = createSlice({
   initialState,
   reducers: {
     updateSaving: (state, action) => {
-      state.saving = action.payload;
+      state.saving = action.payload.saving;
+      state.description = action.payload.description;
+      state.date = action.payload.date;
     },
   },
 });
