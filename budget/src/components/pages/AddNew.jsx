@@ -51,14 +51,14 @@
 //   );
 // }
 /* eslint-disable no-unused-vars */
-import {
-  TransactionInput,
-  TransactionAddButton,
-  TransactionTextarea,
-  TransactionCategory,
-  TransactionDate,
-  TransactionTime,
-} from "../../Pre-buildComponent/Transaction";
+// import {
+//   TransactionInput,
+//   TransactionAddButton,
+//   TransactionTextarea,
+//   TransactionCategory,
+//   TransactionDate,
+//   TransactionTime,
+// } from "../../Pre-buildComponent/Transaction";
 import { BudgetInput, BudgetAddButton } from "../../Pre-buildComponent/budget";
 import {
   SavingsInput,
