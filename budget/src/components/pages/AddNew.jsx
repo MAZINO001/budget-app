@@ -14,10 +14,10 @@ export default function AddNew() {
         </div>
       </div>
       <div className="w-[100%] md:w-[50%] h-[100%]">
-        <div className="bg-gray-700 h-[285px] md:h-[60%] rounded-md p-2  mb-2 relative">
+        <div className="bg-gray-700 h-[285px] md:h-[65%] rounded-md p-2  mb-2 relative">
           <Savings />
         </div>
-        <div className="bg-gray-700 h-[150px] md:h-[38.5%] rounded-md p-2 relative">
+        <div className="bg-gray-700 h-[150px] md:h-[33.5%] rounded-md p-2 relative">
           <Budget />
         </div>
       </div>

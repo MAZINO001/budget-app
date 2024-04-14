@@ -34,7 +34,7 @@ export default function Sidebar() {
       <div
         className={`${
           isMobile
-            ? "flex flex-row md:flex-col justify-between md:h-[350px] text-3xl cursor-pointer gap-14 mobileSidebar bg-blue-500"
+            ? "flex flex-row md:flex-col justify-between md:h-[350px] text-3xl cursor-pointer gap-14 mobileSidebar"
             : "flex flex-row md:flex-col justify-between md:h-[350px] text-3xl cursor-pointer gap-14 mx-4 "
         }`}
       >

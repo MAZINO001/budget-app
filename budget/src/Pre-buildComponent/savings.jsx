@@ -89,10 +89,10 @@ export default function Savings() {
           style={{ height: "40px" }}
         />
       </div>
-      <div className="card flex items-center justify-center mt-2">
+      <div className="card flex items-center justify-center mt-2 w-[100%]">
         <Button
           label="Submit"
-          className="w-[150px] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center absolute bottom-[5px]"
+          className="w-[150px] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center justify-center absolute bottom-[5px]"
           onClick={togglePanel}
         />
       </div>

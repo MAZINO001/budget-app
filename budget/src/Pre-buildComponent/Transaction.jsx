@@ -250,11 +250,16 @@ export default function Transaction() {
     setActive(!Active);
   };
   const handleValueChange = () => {
-    const formattedTime = localTime.getHours().toString().padStart(2, '0') + ':' +
-                         localTime.getMinutes().toString().padStart(2, '0');
-    const formattedDate = localDate.getDate().toString().padStart(2, '0') + '/' +
-                          (localDate.getMonth() + 1).toString().padStart(2, '0') + '/' +
-                          localDate.getFullYear();
+    const formattedTime =
+      localTime.getHours().toString().padStart(2, "0") +
+      ":" +
+      localTime.getMinutes().toString().padStart(2, "0");
+    const formattedDate =
+      localDate.getDate().toString().padStart(2, "0") +
+      "/" +
+      (localDate.getMonth() + 1).toString().padStart(2, "0") +
+      "/" +
+      localDate.getFullYear();
     dispatch(
       updateTransaction({
         transaction: localTransaction,
@@ -265,8 +270,7 @@ export default function Transaction() {
       })
     );
     togglepanel();
-  }
-  
+  };
 
   const categoryOptionTemplate = (option) => (
     <div className="flex align-items-center">
@@ -308,8 +312,8 @@ export default function Transaction() {
         />
       </div>
 
-      <div className="flex gap-4">
-        <div className="card flex flex-wrap gap-3 p-fluid">
+      <div className="flex gap-4 w-[100%] ">
+        <div className="card flex flex-wrap gap-3 p-fluid w-[50%]">
           <div className="flex-auto">
             <label htmlFor="buttondisplay" className="font-bold block mb-2">
               Time
@@ -324,7 +328,7 @@ export default function Transaction() {
             />
           </div>
         </div>
-        <div className="card flex flex-wrap gap-3 p-fluid">
+        <div className="card flex flex-wrap gap-3 p-fluid w-[50%]">
           <div className="flex-auto">
             <label htmlFor="buttondisplay" className="font-bold block mb-2">
               Date
@@ -350,7 +354,7 @@ export default function Transaction() {
         />
       </div>
 
-      <div className="card flex items-center justify-center">
+      <div className="card flex items-center justify-center w-[100%]">
         <Button
           label="Submit"
           className="w-[150px] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center absolute bottom-[5px]"
