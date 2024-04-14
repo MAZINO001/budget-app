@@ -11,6 +11,7 @@ export const amountSlice = createSlice({
   reducers: {
     updateAmount: (state, action) => {
       state.amount = action.payload;
+      console.log(action.payload);
     },
   },
 });

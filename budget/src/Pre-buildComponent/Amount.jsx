@@ -51,19 +51,18 @@
 import { Button } from "primereact/button";
 import { InputNumber } from "primereact/inputnumber";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { updateAmount } from "../components/Redux/Features/AddNewSlices/AmountSlice";
 
 export default function Amount() {
   const dispatch = useDispatch();
-  const amount = useSelector((state) => state.amountSlice?.amount || 0.0);
-  const [localAmount, setLocalAmount] = useState(amount);
+  const [localAmount, setLocalAmount] = useState(0);
   const [isActive, setIsActive] = useState(false);
 
   const handleValueChange = (e) => {
     const newValue = e.value;
     setLocalAmount(newValue);
-    dispatch(updateAmount({ amount: newValue }));
+    dispatch(updateAmount(newValue));
   };
 
   const togglePanel = () => {

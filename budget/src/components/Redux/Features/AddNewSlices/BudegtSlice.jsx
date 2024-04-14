@@ -11,7 +11,6 @@ export const budgetSlice = createSlice({
   reducers: {
     updateBudget: (state, action) => {
       state.budget = action.payload;
-      console.log("status" + action.payload);
     },
   },
 });

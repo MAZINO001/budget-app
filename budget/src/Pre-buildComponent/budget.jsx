@@ -15,7 +15,7 @@ export default function Budget() {
   const handleValueChange = (e) => {
     const newValue = e.value;
     setLocalBudget(newValue);
-    dispatch(updateBudget({ budegt: newValue }));
+    dispatch(updateBudget(newValue));
   };
 
   return (
