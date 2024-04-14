@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+// /* eslint-disable no-unused-vars */
 // import { useState } from "react";
 // import { Button } from "primereact/button";
 // import { Calendar } from "primereact/calendar";
@@ -6,7 +6,7 @@
 // import { InputNumber } from "primereact/inputnumber";
 // import { InputTextarea } from "primereact/inputtextarea";
 // import { IoMdRestaurant } from "react-icons/io";
-// import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch } from "react-redux";
 // import { updateTransaction } from "../components/Redux/Features/AddNewSlices/TransactionSlice";
 
 // const Expenses = [
@@ -30,11 +30,6 @@
 // export default function Transaction() {
 //   const [Active, setActive] = useState(false);
 //   const dispatch = useDispatch();
-//   // const amount = useSelector((state) => state.amount.transaction);
-//   // const time = useSelector((state) => state.amount.transaction);
-//   // const date = useSelector((state) => state.amount.transaction);
-//   // const description = useSelector((state) => state.amount.transaction);
-//   // const category = useSelector((state) => state.amount.transaction);
 //   const [localTransaction, setLocalTransaction] = useState("");
 //   const [localTime, setLocalTime] = useState(new Date());
 //   const [localDate, setLocalDate] = useState(new Date());
@@ -62,11 +57,21 @@
 //     setActive(!Active);
 //   };
 //   const handleValueChange = () => {
+//     const formattedTime =
+//       localTime.getHours().toString().padStart(2, "0") +
+//       ":" +
+//       localTime.getMinutes().toString().padStart(2, "0");
+//     const formattedDate =
+//       localDate.getDate().toString().padStart(2, "0") +
+//       "/" +
+//       (localDate.getMonth() + 1).toString().padStart(2, "0") +
+//       "/" +
+//       localDate.getFullYear();
 //     dispatch(
 //       updateTransaction({
 //         transaction: localTransaction,
-//         time: localTime,
-//         date: localDate,
+//         time: formattedTime,
+//         date: formattedDate,
 //         description: localDescription,
 //         category: localCategory.name,
 //       })
@@ -114,8 +119,8 @@
 //         />
 //       </div>
 
-//       <div className="flex gap-4">
-//         <div className="card flex flex-wrap gap-3 p-fluid">
+//       <div className="flex gap-4 w-[100%] ">
+//         <div className="card flex flex-wrap gap-3 p-fluid w-[50%]">
 //           <div className="flex-auto">
 //             <label htmlFor="buttondisplay" className="font-bold block mb-2">
 //               Time
@@ -130,7 +135,7 @@
 //             />
 //           </div>
 //         </div>
-//         <div className="card flex flex-wrap gap-3 p-fluid">
+//         <div className="card flex flex-wrap gap-3 p-fluid w-[50%]">
 //           <div className="flex-auto">
 //             <label htmlFor="buttondisplay" className="font-bold block mb-2">
 //               Date
@@ -145,6 +150,7 @@
 //           </div>
 //         </div>
 //       </div>
+
 //       <div className="card flex flex-col justify-content-center">
 //         <label htmlFor="Description" className="font-bold block mb-2">
 //           Description
@@ -156,7 +162,7 @@
 //         />
 //       </div>
 
-//       <div className="card flex items-center justify-center">
+//       <div className="card flex items-center justify-center w-[100%]">
 //         <Button
 //           label="Submit"
 //           className="w-[150px] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center absolute bottom-[5px]"
@@ -282,18 +288,30 @@ export default function Transaction() {
   return (
     <>
       <div className="card flex flex-wrap gap-3 p-fluid">
-        <div className="flex-auto">
-          <label htmlFor="Input" className="font-bold block mb-2">
-            Transaction Amount
-          </label>
-          <InputNumber
-            value={localTransaction}
-            onValueChange={(e) => setLocalTransaction(e.value)}
-            placeholder="$0.00"
-            mode="currency"
-            currency="USD"
-            style={{ height: "40px" }}
-          />
+        <div className="flex w-[100%]">
+          <div className="flex-auto">
+            <label htmlFor="Input" className="font-bold block mb-2 w-[50%]">
+              Transaction Amount
+            </label>
+            <InputNumber
+              value={localTransaction}
+              onValueChange={(e) => setLocalTransaction(e.value)}
+              placeholder="$0.00"
+              mode="currency"
+              currency="USD"
+              style={{ height: "40px" }}
+            />
+          </div>
+          <div className="card flex flex-col justify-content-center w-[50%]">
+            <label htmlFor="Description" className="font-bold block mb-2">
+              Payee
+            </label>
+            <InputTextarea
+              value={localDescription}
+              onChange={(e) => setLocalDescription(e.target.value)}
+              style={{ padding: " 2px 12px", height: "70px" }}
+            />
+          </div>
         </div>
       </div>
       <div className="card flex flex-col justify-content-center">
@@ -343,18 +361,18 @@ export default function Transaction() {
           </div>
         </div>
       </div>
-      <div className="card flex flex-col justify-content-center">
-        <label htmlFor="Description" className="font-bold block mb-2">
-          Description
-        </label>
-        <InputTextarea
-          value={localDescription}
-          onChange={(e) => setLocalDescription(e.target.value)}
-          style={{ padding: " 2px 12px", height: "70px" }}
-        />
-      </div>
 
-      <div className="card flex items-center justify-center w-[100%]">
+        <div className="card flex flex-col justify-content-center w-[50%]">
+          <label htmlFor="Description" className="font-bold block mb-2">
+            Memo
+          </label>
+          <InputTextarea
+            value={localDescription}
+            onChange={(e) => setLocalDescription(e.target.value)}
+            style={{ padding: " 2px 12px", height: "70px" }}
+          />
+        </div>
+       <div className="card flex items-center justify-center w-[100%]">
         <Button
           label="Submit"
           className="w-[150px] px-2 py-2 bg-[#06B6D4] text-white h-[40px] flex items-center absolute bottom-[5px]"

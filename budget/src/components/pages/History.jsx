@@ -1,11 +1,3 @@
-// import HistoryPreBiuld from "../global/PreBuildComp";
-// export default function History() {
-//   return (
-//     <div className="mx-2 rounded-md overflow-hidden mb-2">
-//       <HistoryPreBiuld />
-//     </div>
-//   );
-// }
 import HistoryPreBiuld from "../global/PreBuildComp";
 export default function History() {
   return (
