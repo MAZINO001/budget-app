@@ -1,4 +1,8 @@
+import { useSelector } from "react-redux";
+import data from "../../Data/fakeData.json";
+
 export function CreditCard1() {
+  const amount = useSelector((state) => state.amount.amount);
   return (
     <div
       className={`w-[100%] h-[120px] relative text-white transition-transform transform hover:scale-110`}
@@ -15,7 +19,7 @@ export function CreditCard1() {
       />
       <div className="absolute top-2 left-2 ">
         <h3 className="text-md mb-1 ">Amount : </h3>
-        <span className="text-3xl tracking-widest">3500$</span>
+        <span className="text-3xl tracking-widest">{amount}$</span>
       </div>
       <div className="absolute bottom-2 text-sm  md:text-md left-2 ">
         <span>4642 3489 9867 7632</span>
@@ -26,7 +30,13 @@ export function CreditCard1() {
     </div>
   );
 }
+
 export function CreditCard2() {
+  let totalSpending = 0;
+
+  for (let i = 0; i < data.length; i++) {
+    totalSpending += data[i].Amount;
+  }
   return (
     <div
       className={`w-[100%] h-[120px] relative text-white transition-transform transform hover:scale-110`}
@@ -43,7 +53,7 @@ export function CreditCard2() {
       />
       <div className="absolute top-2 left-2 ">
         <h3 className="text-md mb-1 ">Amount : </h3>
-        <span className="text-3xl tracking-widest">3500$</span>
+        <span className="text-3xl tracking-widest">{totalSpending}$</span>
       </div>
       <div className="absolute bottom-2 text-sm left-2 md:text-md">
         <span>4642 3489 9867 7632</span>

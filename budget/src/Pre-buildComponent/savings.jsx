@@ -76,7 +76,7 @@ export default function Savings() {
         />
       </div>
 
-      <div className="card flex justify-content-center flex-col ">
+      <div className="card flex justify-content-center flex-col w-[100%] ">
         <label htmlFor="duration" className="font-bold block mb-2">
           Duration
         </label>
