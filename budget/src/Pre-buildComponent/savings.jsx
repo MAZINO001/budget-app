@@ -9,10 +9,9 @@ import { useDispatch } from "react-redux";
 export default function Savings() {
   const dispatch = useDispatch();
   const [localSaving, setLocalSaving] = useState(0);
-  const [description, setDescription] = useState("");
-  const [dates, setDates] = useState(null);
+  const [LocalDescription, setLocalDescription] = useState("");
+  const [dates, setDates] = useState(0);
   const [isActive, setIsActive] = useState(false);
-
   const formatDate = (dates) => {
     if (!dates || !Array.isArray(dates) || dates.length !== 2) {
       return "";
@@ -40,9 +39,9 @@ export default function Savings() {
     setLocalSaving(newValue);
     dispatch(
       updateSaving({
-        saving: localSaving,
-        description: description,
-        date: dates,
+        saving: newValue,
+        description: LocalDescription,
+        date: formatDate(dates),
       })
     );
   };
@@ -67,12 +66,12 @@ export default function Savings() {
       </div>
 
       <div className="card flex flex-col justify-content-center w-[100%]">
-        <label htmlFor="Description" className="font-bold block mb-2">
-          Description
+        <label htmlFor="LocalDescription" className="font-bold block mb-2">
+          LocalDescription
         </label>
         <InputTextarea
-          value={description}
-          onChange={(e) => setDescription(e.value)}
+          value={LocalDescription}
+          onChange={(e) => setLocalDescription(e.target.value)}
           style={{ padding: " 2px 12px", height: "70px" }}
         />
       </div>
@@ -100,7 +99,7 @@ export default function Savings() {
       {isActive && (
         <div className="flex b flex-col gap-4 items-center justify-center bg-blue-500 w-[300px] h-[350px] popupPosition rounded-md p-4 text-lg">
           <h1>Amount: {localSaving}</h1>
-          <h1>description: {description}</h1>
+          <h1>LocalDescription: {LocalDescription}</h1>
           <h1>duration: {formatDate(dates)}</h1>
           <div className="flex gap-4">
             <button

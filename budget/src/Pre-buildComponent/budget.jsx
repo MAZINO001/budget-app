@@ -2,12 +2,11 @@ import { Button } from "primereact/button";
 import { InputNumber } from "primereact/inputnumber";
 import { useState } from "react";
 import { updateBudget } from "../components/Redux/Features/AddNewSlices/BudegtSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 export default function Budget() {
   const dispatch = useDispatch();
-  const budget = useSelector((state) => state.budgetSlice?.budegt || 0.0);
-  const [localBudget, setLocalBudget] = useState(budget);
+  const [localBudget, setLocalBudget] = useState(0);
   const [Active, setActive] = useState(false);
   const togglepanel = () => {
     setActive(!Active);
