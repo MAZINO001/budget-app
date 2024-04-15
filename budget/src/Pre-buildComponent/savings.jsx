@@ -9,7 +9,7 @@ import { InputText } from "primereact/inputtext";
 
 export default function Savings() {
   const dispatch = useDispatch();
-  const [localSaving, setLocalSaving] = useState(0);
+  const [localSaving, setLocalSaving] = useState();
   const [LocalDescription, setLocalDescription] = useState("");
   const [LocalGoal, setLocalGoal] = useState("");
   const [dates, setDates] = useState(0);

@@ -23,7 +23,7 @@ import { Dropdown } from "primereact/dropdown";
 
 export default function Amount() {
   const dispatch = useDispatch();
-  const [localAmount, setLocalAmount] = useState(0);
+  const [localAmount, setLocalAmount] = useState();
   const [localSource, setLocalSource] = useState("");
   const [isActive, setIsActive] = useState(false);
 
@@ -77,6 +77,7 @@ export default function Amount() {
               filter
               className="h-[40px] flex items-center "
               itemTemplate={categoryOptionTemplate}
+              style={{ backgroundColor: "#4a5568", color: "#fff" }}
             />
           </div>
         </div>

@@ -40,7 +40,7 @@ import { Dropdown } from "primereact/dropdown";
 
 export default function Budget() {
   const dispatch = useDispatch();
-  const [localBudget, setLocalBudget] = useState(0);
+  const [localBudget, setLocalBudget] = useState();
   const [localCategory, setlocalCategory] = useState("");
   const [Active, setActive] = useState(false);
   const togglepanel = () => {
@@ -75,7 +75,7 @@ export default function Budget() {
             style={{ height: "40px" }}
           />
         </div>
-        <div className="card flex flex-col justify-content-center w-[100%]">
+        <div className="card flex flex-col justify-content-center w-[100%] text-white">
           <label htmlFor="Category" className="font-bold block mb-2">
             Category
           </label>
@@ -88,6 +88,7 @@ export default function Budget() {
             filter
             className="h-[40px] flex items-center"
             itemTemplate={categoryOptionTemplate}
+            style={{ backgroundColor: "#4a5568", color: "#fff" }}
           />
         </div>
       </div>

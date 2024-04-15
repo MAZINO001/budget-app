@@ -180,6 +180,7 @@ export default function Transaction() {
           filter
           className="h-[40px] flex items-center"
           itemTemplate={categoryOptionTemplate}
+          style={{ backgroundColor: "#4a5568", color: "#fff" }}
         />
       </div>
       <div className="card flex flex-col justify-content-center">

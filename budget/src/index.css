@@ -94,16 +94,16 @@ body {
     z-index: 100;
 }
 
-input,
+input {
+    background-color: #4a5568;
+    color: #fff;
+    padding-left: 10px;
+}
+
 textarea {
     background-color: #4a5568;
     color: #fff;
     resize: none;
-}
-
-Dropdown {
-    background-color: #4a5568;
-    color: #fff;
 }
 
 input::placeholder {
