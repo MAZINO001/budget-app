@@ -75,7 +75,7 @@ export default function Amount() {
               optionLabel="name"
               placeholder="Select a income Source"
               filter
-              className="h-[40px] flex items-center"
+              className="h-[40px] flex items-center "
               itemTemplate={categoryOptionTemplate}
             />
           </div>

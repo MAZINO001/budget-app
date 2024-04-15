@@ -188,6 +188,7 @@ export default function Transaction() {
         </label>
         <InputTextarea
           value={localDescription}
+          placeholder="Add A Amall Aescription"
           onChange={(e) => setLocalDescription(e.target.value)}
           style={{ padding: " 2px 12px", height: "70px" }}
         />

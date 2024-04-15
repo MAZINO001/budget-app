@@ -80,7 +80,7 @@ export default function Savings() {
           />
         </div>
       </div>
-      
+
       <div className="card flex justify-content-center flex-col w-[100%] ">
         <label htmlFor="duration" className="font-bold block mb-2">
           Duration
@@ -100,6 +100,7 @@ export default function Savings() {
         </label>
         <InputTextarea
           value={LocalDescription}
+          placeholder="Add A Amall Aescription"
           onChange={(e) => setLocalDescription(e.target.value)}
           style={{ padding: " 2px 12px", height: "70px" }}
         />

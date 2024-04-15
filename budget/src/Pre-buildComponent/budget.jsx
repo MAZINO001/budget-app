@@ -1,12 +1,47 @@
+import {
+  FaHome,
+  FaCar,
+  FaShoppingCart,
+  FaMoneyBillAlt,
+  FaTshirt,
+  FaUser,
+  FaFilm,
+  FaPaw,
+  FaGift,
+  FaHandsHelping,
+  FaPlane,
+  FaGraduationCap,
+} from "react-icons/fa";
+
+const Expenses = [
+  { name: "housing", icon: <FaHome /> },
+  { name: "utilities", icon: <FaMoneyBillAlt /> },
+  { name: "transportation", icon: <FaCar /> },
+  { name: "debt payments", icon: <FaMoneyBillAlt /> },
+  { name: "subscriptions", icon: <FaMoneyBillAlt /> },
+  { name: "bills", icon: <FaMoneyBillAlt /> },
+  { name: "groceries", icon: <FaShoppingCart /> },
+  { name: "clothing", icon: <FaTshirt /> },
+  { name: "personal care", icon: <FaUser /> },
+  { name: "entertainment", icon: <FaFilm /> },
+  { name: "pets", icon: <FaPaw /> },
+  { name: "gifts", icon: <FaGift /> },
+  { name: "donations", icon: <FaHandsHelping /> },
+  { name: "travel", icon: <FaPlane /> },
+  { name: "education", icon: <FaGraduationCap /> },
+];
+
 import { Button } from "primereact/button";
 import { InputNumber } from "primereact/inputnumber";
 import { useState } from "react";
 import { updateBudget } from "../components/Redux/Features/AddNewSlices/BudegtSlice";
 import { useDispatch } from "react-redux";
+import { Dropdown } from "primereact/dropdown";
 
 export default function Budget() {
   const dispatch = useDispatch();
   const [localBudget, setLocalBudget] = useState(0);
+  const [localCategory, setlocalCategory] = useState("");
   const [Active, setActive] = useState(false);
   const togglepanel = () => {
     setActive(!Active);
@@ -18,6 +53,12 @@ export default function Budget() {
     dispatch(updateBudget(newValue));
   };
 
+  const categoryOptionTemplate = (option) => (
+    <div className="flex items-center justify-center gap-2">
+      <div>{option.icon}</div>
+      <div>{option.name}</div>
+    </div>
+  );
   return (
     <>
       <div className="card flex flex-wrap gap-3 p-fluid ">
@@ -32,6 +73,21 @@ export default function Budget() {
             mode="currency"
             currency="USD"
             style={{ height: "40px" }}
+          />
+        </div>
+        <div className="card flex flex-col justify-content-center w-[100%]">
+          <label htmlFor="Category" className="font-bold block mb-2">
+            Category
+          </label>
+          <Dropdown
+            value={localCategory}
+            onChange={(e) => setlocalCategory(e.value)}
+            options={Expenses}
+            optionLabel="name"
+            placeholder="Select a Category"
+            filter
+            className="h-[40px] flex items-center"
+            itemTemplate={categoryOptionTemplate}
           />
         </div>
       </div>

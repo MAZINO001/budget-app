@@ -93,3 +93,29 @@ body {
     transform: translate(-50%, -50%);
     z-index: 100;
 }
+
+input,
+textarea {
+    background-color: #4a5568;
+    color: #fff;
+    resize: none;
+}
+
+Dropdown {
+    background-color: #4a5568;
+    color: #fff;
+}
+
+input::placeholder {
+    color: #cbd5e0;
+}
+
+select,
+option {
+    background-color: red;
+}
+
+label {
+    color: #fff;
+    font-size: 15px;
+}
