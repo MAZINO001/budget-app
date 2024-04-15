@@ -7,6 +7,7 @@ const initialState = {
   time: "12:10",
   date: "10/10/2020",
   description: "this is a test",
+  payee: "kfc",
 };
 
 export const transactionSlice = createSlice({
@@ -19,6 +20,7 @@ export const transactionSlice = createSlice({
       state.time = action.payload.time;
       state.date = action.payload.date;
       state.description = action.payload.description;
+      state.payee = action.payload.payee;
     },
   },
 });

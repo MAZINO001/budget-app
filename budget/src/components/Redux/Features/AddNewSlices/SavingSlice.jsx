@@ -2,6 +2,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   saving: 10,
+  goal: "car",
   description: "this is a test",
   date: "10/10/2020",
 };
@@ -12,6 +13,7 @@ export const savingSlice = createSlice({
   reducers: {
     updateSaving: (state, action) => {
       state.saving = action.payload.saving;
+      state.goal = action.payload.goal;
       state.description = action.payload.description;
       state.date = action.payload.date;
     },

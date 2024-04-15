@@ -5,11 +5,13 @@ import { InputTextarea } from "primereact/inputtextarea";
 import { useState } from "react";
 import { updateSaving } from "../components/Redux/Features/AddNewSlices/SavingSlice";
 import { useDispatch } from "react-redux";
+import { InputText } from "primereact/inputtext";
 
 export default function Savings() {
   const dispatch = useDispatch();
   const [localSaving, setLocalSaving] = useState(0);
   const [LocalDescription, setLocalDescription] = useState("");
+  const [LocalGoal, setLocalGoal] = useState("");
   const [dates, setDates] = useState(0);
   const [isActive, setIsActive] = useState(false);
   const formatDate = (dates) => {
@@ -40,6 +42,7 @@ export default function Savings() {
     dispatch(
       updateSaving({
         saving: newValue,
+        goal: LocalGoal,
         description: LocalDescription,
         date: formatDate(dates),
       })
@@ -51,20 +54,33 @@ export default function Savings() {
   };
   return (
     <div className="flex flex-wrap gap-3 p-fluid">
-      <div className="flex-auto">
-        <label htmlFor="amount" className="font-bold block mb-2">
-          Saving Amount
-        </label>
-        <InputNumber
-          value={localSaving}
-          onValueChange={handleValueChange}
-          placeholder="$0.00"
-          mode="currency"
-          currency="USD"
-          style={{ height: "40px" }}
-        />
+      <div className="flex w-[100%] gap-4">
+        <div className="flex-auto w-[50%]">
+          <label htmlFor="amount" className="font-bold block mb-2">
+            Saving Amount
+          </label>
+          <InputNumber
+            value={localSaving}
+            onValueChange={handleValueChange}
+            placeholder="$0.00"
+            mode="currency"
+            currency="USD"
+            style={{ height: "40px" }}
+          />
+        </div>
+        <div className="card flex flex-col justify-content-center w-[50%]">
+          <label htmlFor="Description" className="font-bold block mb-2">
+            Goal
+          </label>
+          <InputText
+            keyfilter="int"
+            placeholder="Goal"
+            value={LocalGoal}
+            onChange={(e) => setLocalGoal(e.target.value)}
+            style={{ padding: " 2px 12px", height: "40px" }}
+          />
+        </div>
       </div>
-
       <div className="card flex flex-col justify-content-center w-[100%]">
         <label htmlFor="LocalDescription" className="font-bold block mb-2">
           LocalDescription
@@ -97,8 +113,9 @@ export default function Savings() {
         />
       </div>
       {isActive && (
-        <div className="flex b flex-col gap-4 items-center justify-center bg-blue-500 w-[300px] h-[350px] popupPosition rounded-md p-4 text-lg">
+        <div className="flex b flex-col gap-4  justify-center bg-blue-500 w-[300px] h-[350px] popupPosition rounded-md p-4 text-lg">
           <h1>Amount: {localSaving}</h1>
+          <h1>Goal: {LocalGoal}</h1>
           <h1>LocalDescription: {LocalDescription}</h1>
           <h1>duration: {formatDate(dates)}</h1>
           <div className="flex gap-4">
