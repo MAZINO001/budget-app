@@ -73,7 +73,6 @@ export default function Savings() {
             Goal
           </label>
           <InputText
-            keyfilter="int"
             placeholder="Goal"
             value={LocalGoal}
             onChange={(e) => setLocalGoal(e.target.value)}
@@ -81,17 +80,7 @@ export default function Savings() {
           />
         </div>
       </div>
-      <div className="card flex flex-col justify-content-center w-[100%]">
-        <label htmlFor="LocalDescription" className="font-bold block mb-2">
-          LocalDescription
-        </label>
-        <InputTextarea
-          value={LocalDescription}
-          onChange={(e) => setLocalDescription(e.target.value)}
-          style={{ padding: " 2px 12px", height: "70px" }}
-        />
-      </div>
-
+      
       <div className="card flex justify-content-center flex-col w-[100%] ">
         <label htmlFor="duration" className="font-bold block mb-2">
           Duration
@@ -105,6 +94,17 @@ export default function Savings() {
           style={{ height: "40px" }}
         />
       </div>
+      <div className="card flex flex-col justify-content-center w-[100%]">
+        <label htmlFor="LocalDescription" className="font-bold block mb-2">
+          Description
+        </label>
+        <InputTextarea
+          value={LocalDescription}
+          onChange={(e) => setLocalDescription(e.target.value)}
+          style={{ padding: " 2px 12px", height: "70px" }}
+        />
+      </div>
+
       <div className="card flex items-center justify-center mt-2 w-[100%]">
         <Button
           label="Submit"

@@ -9,22 +9,39 @@ import { IoMdRestaurant } from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { updateTransaction } from "../components/Redux/Features/AddNewSlices/TransactionSlice";
 import { InputText } from "primereact/inputtext";
+
+import {
+  FaHome,
+  FaUtensils,
+  FaCar,
+  FaShoppingCart,
+  FaMoneyBillAlt,
+  FaTshirt,
+  FaUser,
+  FaFilm,
+  FaPaw,
+  FaGift,
+  FaHandsHelping,
+  FaPlane,
+  FaGraduationCap,
+} from "react-icons/fa";
+
 const Expenses = [
-  { name: "housing", icon: "" },
-  { name: "utilities", icon: "" },
-  { name: "transportation", icon: "" },
-  { name: "debt payments", icon: "" },
-  { name: "subscriptions", icon: "" },
-  { name: "bills", icon: "" },
-  { name: "groceries", icon: "" },
-  { name: "clothing", icon: "" },
-  { name: "personal care", icon: "" },
-  { name: "entertainment", icon: "" },
-  { name: "pets", icon: "" },
-  { name: "gifts", icon: "" },
-  { name: "donations", icon: "" },
-  { name: "travel", icon: "" },
-  { name: "education", icon: "" },
+  { name: "housing", icon: <FaHome /> },
+  { name: "utilities", icon: <FaMoneyBillAlt /> },
+  { name: "transportation", icon: <FaCar /> },
+  { name: "debt payments", icon: <FaMoneyBillAlt /> },
+  { name: "subscriptions", icon: <FaMoneyBillAlt /> },
+  { name: "bills", icon: <FaMoneyBillAlt /> },
+  { name: "groceries", icon: <FaShoppingCart /> },
+  { name: "clothing", icon: <FaTshirt /> },
+  { name: "personal care", icon: <FaUser /> },
+  { name: "entertainment", icon: <FaFilm /> },
+  { name: "pets", icon: <FaPaw /> },
+  { name: "gifts", icon: <FaGift /> },
+  { name: "donations", icon: <FaHandsHelping /> },
+  { name: "travel", icon: <FaPlane /> },
+  { name: "education", icon: <FaGraduationCap /> },
 ];
 
 export default function Transaction() {
@@ -82,8 +99,8 @@ export default function Transaction() {
   };
 
   const categoryOptionTemplate = (option) => (
-    <div className="flex align-items-center">
-      <IoMdRestaurant className="text-[28px] text-red-500 border-red-500 rounded-full border mr-2" />
+    <div className="flex items-center justify-center gap-2">
+      <div>{option.icon}</div>
       <div>{option.name}</div>
     </div>
   );
@@ -110,7 +127,6 @@ export default function Transaction() {
               Payee
             </label>
             <InputText
-              keyfilter="int"
               placeholder="Payee"
               value={localPayee}
               onChange={(e) => setLocalPayee(e.target.value)}
@@ -118,21 +134,6 @@ export default function Transaction() {
             />
           </div>
         </div>
-      </div>
-      <div className="card flex flex-col justify-content-center">
-        <label htmlFor="Category" className="font-bold block mb-2">
-          Category
-        </label>
-        <Dropdown
-          value={localCategory}
-          onChange={(e) => setLocalCategory(e.value)}
-          options={Expenses}
-          optionLabel="name"
-          placeholder="Select a Category"
-          filter
-          className="h-[40px] flex items-center"
-          itemTemplate={categoryOptionTemplate}
-        />
       </div>
 
       <div className="flex gap-4 w-[100%] ">
@@ -166,7 +167,21 @@ export default function Transaction() {
           </div>
         </div>
       </div>
-
+      <div className="card flex flex-col justify-content-center">
+        <label htmlFor="Category" className="font-bold block mb-2">
+          Category
+        </label>
+        <Dropdown
+          value={localCategory}
+          onChange={(e) => setLocalCategory(e.value)}
+          options={Expenses}
+          optionLabel="name"
+          placeholder="Select a Category"
+          filter
+          className="h-[40px] flex items-center"
+          itemTemplate={categoryOptionTemplate}
+        />
+      </div>
       <div className="card flex flex-col justify-content-center">
         <label htmlFor="Description" className="font-bold block mb-2">
           Memo

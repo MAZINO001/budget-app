@@ -1,17 +1,25 @@
+import {
+  FaMoneyCheckAlt,
+  FaBriefcase,
+  FaDollarSign,
+  FaHome,
+  FaChartPie,
+} from "react-icons/fa";
+
 const Expenses = [
-  { name: "Salary" },
-  { name: "Freelance Work" },
-  { name: "Side Hustles" },
-  { name: "Rental Income" },
-  { name: "Investment Income" },
+  { name: "Salary", icon: <FaMoneyCheckAlt /> },
+  { name: "Freelance Work", icon: <FaBriefcase /> },
+  { name: "Side Hustles", icon: <FaDollarSign /> },
+  { name: "Rental Income", icon: <FaHome /> },
+  { name: "Investment Income", icon: <FaChartPie /> },
 ];
+
 import { Button } from "primereact/button";
 import { InputNumber } from "primereact/inputnumber";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { updateAmount } from "../components/Redux/Features/AddNewSlices/AmountSlice";
 import { Dropdown } from "primereact/dropdown";
-import { IoMdRestaurant } from "react-icons/io";
 
 export default function Amount() {
   const dispatch = useDispatch();
@@ -33,8 +41,8 @@ export default function Amount() {
     setIsActive(!isActive);
   };
   const categoryOptionTemplate = (option) => (
-    <div className="flex align-items-center">
-      <IoMdRestaurant className="text-[28px] text-red-500 border-red-500 rounded-full border mr-2" />
+    <div className="flex items-center justify-center gap-2">
+      <div>{option.icon}</div>
       <div>{option.name}</div>
     </div>
   );
