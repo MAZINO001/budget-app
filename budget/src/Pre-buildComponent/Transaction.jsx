@@ -71,9 +71,6 @@ export default function Transaction() {
     }).format(date);
   };
 
-  const togglepanel = () => {
-    setActive(!Active);
-  };
   const handleValueChange = () => {
     const formattedTime =
       localTime.getHours().toString().padStart(2, "0") +
@@ -95,6 +92,7 @@ export default function Transaction() {
         category: localCategory.name,
       })
     );
+
     const newTransaction = {
       transaction: localTransaction,
       time: formattedTime,
@@ -108,6 +106,10 @@ export default function Transaction() {
     const updatedTransactions = [...existingTransactions, newTransaction];
     localStorage.setItem("transactions", JSON.stringify(updatedTransactions));
     togglepanel();
+  };
+
+  const togglepanel = () => {
+    setActive(!Active);
   };
 
   const categoryOptionTemplate = (option) => (
@@ -224,7 +226,7 @@ export default function Transaction() {
           <div className="flex gap-4">
             <button
               className="bg-red-500 px-4 py-2 rounded-md capitalize cursor-pointer text-md "
-              onClick={togglepanel}
+              onClick={handleValueChange}
             >
               save
             </button>

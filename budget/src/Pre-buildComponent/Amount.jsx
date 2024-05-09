@@ -33,10 +33,21 @@ export default function Amount() {
     dispatch(
       updateAmount({
         amount: newValue,
-        source: localSource,
+        source: localSource.name,
       })
     );
+
+    const newAmount = {
+      amount: newValue, // Corrected line
+      source: localSource.name,
+    };
+    const existingAmount = JSON.parse(localStorage.getItem("amount")) || [];
+    const updatedAmount = [...existingAmount, newAmount];
+    localStorage.setItem("amount", JSON.stringify(updatedAmount));
+    console.log(newValue);
+    console.log(localSource.name);
   };
+
   const togglePanel = () => {
     setIsActive(!isActive);
   };
