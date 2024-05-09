@@ -90,7 +90,7 @@ export default function Amount() {
         />
       </div>
       {isActive && (
-        <div className="flex b flex-col gap-4  justify-center bg-blue-500 w-[300px] h-[350px] popupPosition rounded-md p-4 text-lg">
+        <div className="resultPopUp popupPosition">
           <h1>Amount: {localAmount}</h1>
           <h1>source: {localSource.name}</h1>
           <div className="flex gap-4">

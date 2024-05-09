@@ -3,8 +3,7 @@
 import "primereact/resources/themes/tailwind-light/theme.css";
 import { Dropdown } from "primereact/dropdown";
 import { useState } from "react";
-import { updatedJsonData } from "../Redux/Features/AddNewSlices/TransactionSlice";
-// import Data from "../../Data/fakeData.json";
+import Data from "../../Data/fakeData.json";
 
 export function Rnage() {
   const [selectedCity, setSelectedCity] = useState(null);
@@ -29,8 +28,7 @@ import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 
 export default function HistoryPreBiuld1() {
-  // const [transactions, setTransactions] = useState(Data);
-  const [transactions, setTransactions] = useState(updatedJsonData);
+  const [transactions, setTransactions] = useState(Data);
 
   return (
     <div className="card " style={{ backgroundColor: "#000" }}>

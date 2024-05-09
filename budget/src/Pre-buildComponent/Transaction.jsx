@@ -95,6 +95,18 @@ export default function Transaction() {
         category: localCategory.name,
       })
     );
+    const newTransaction = {
+      transaction: localTransaction,
+      time: formattedTime,
+      date: formattedDate,
+      description: localDescription,
+      payee: localPayee,
+      category: localCategory.name,
+    };
+    const existingTransactions =
+      JSON.parse(localStorage.getItem("transactions")) || [];
+    const updatedTransactions = [...existingTransactions, newTransaction];
+    localStorage.setItem("transactions", JSON.stringify(updatedTransactions));
     togglepanel();
   };
 
@@ -167,7 +179,7 @@ export default function Transaction() {
           </div>
         </div>
       </div>
-      <div className="card flex flex-col justify-content-center">
+      <div className="card flex flex-col justify-content-center ">
         <label htmlFor="Category" className="font-bold block mb-2">
           Category
         </label>
@@ -178,7 +190,7 @@ export default function Transaction() {
           optionLabel="name"
           placeholder="Select a Category"
           filter
-          className="h-[40px] flex items-center"
+          className="h-[40px] flex items-center "
           itemTemplate={categoryOptionTemplate}
           style={{ backgroundColor: "#4a5568", color: "#fff" }}
         />
@@ -202,7 +214,7 @@ export default function Transaction() {
         />
       </div>
       {Active && (
-        <div className="flex b flex-col gap-4  justify-center bg-blue-500 w-[300px] h-[350px] popupPosition rounded-md p-4 text-lg">
+        <div className="resultPopUp popupPosition">
           <h1>Transaction Amount: {localTransaction}</h1>
           <h1>Time: {formatTime(localTime)}</h1>
           <h1>Date: {formatDate(localDate)}</h1>

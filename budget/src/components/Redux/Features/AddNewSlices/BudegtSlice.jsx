@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   budget: 0,
+  category : "housing"
 };
 
 export const budgetSlice = createSlice({
@@ -11,6 +12,7 @@ export const budgetSlice = createSlice({
   reducers: {
     updateBudget: (state, action) => {
       state.budget = action.payload;
+      state.category = action.payload;
     },
   },
 });

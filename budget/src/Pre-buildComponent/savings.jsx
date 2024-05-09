@@ -114,11 +114,11 @@ export default function Savings() {
         />
       </div>
       {isActive && (
-        <div className="flex b flex-col gap-4  justify-center bg-blue-500 w-[300px] h-[350px] popupPosition rounded-md p-4 text-lg">
+        <div className="resultPopUp popupPosition">
           <h1>Amount: {localSaving}</h1>
           <h1>Goal: {LocalGoal}</h1>
-          <h1>LocalDescription: {LocalDescription}</h1>
           <h1>duration: {formatDate(dates)}</h1>
+          <h1>Description: {LocalDescription}</h1>
           <div className="flex gap-4">
             <button
               className="bg-red-500 px-4 py-2 rounded-md capitalize cursor-pointer text-md"

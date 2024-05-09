@@ -19,7 +19,7 @@ export function CreditCard1() {
       />
       <div className="absolute top-2 left-2 ">
         <h3 className="text-md mb-1 ">Amount : </h3>
-        <span className="text-3xl tracking-widest">{amount}$</span>
+        <span className="text-3xl tracking-widest">{amount || 0.0}$</span>
       </div>
       <div className="absolute bottom-2 text-sm  md:text-md left-2 ">
         <span>4642 3489 9867 7632</span>

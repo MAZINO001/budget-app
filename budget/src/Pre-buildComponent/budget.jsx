@@ -50,7 +50,12 @@ export default function Budget() {
   const handleValueChange = (e) => {
     const newValue = e.value;
     setLocalBudget(newValue);
-    dispatch(updateBudget(newValue));
+    dispatch(
+      updateBudget({
+        budget: newValue,
+        category: localCategory.name,
+      })
+    );
   };
 
   const categoryOptionTemplate = (option) => (
@@ -100,8 +105,9 @@ export default function Budget() {
         />
       </div>
       {Active && (
-        <div className="flex b flex-col gap-4 items-center justify-center bg-blue-500 w-[300px] h-[350px] popupPosition rounded-md p-4 text-lg">
+        <div className="resultPopUp popupPosition">
           <h1>Budget: {localBudget}</h1>
+          <h1>Category: {localCategory.name}</h1>
           <div className="flex gap-4">
             <button
               className="bg-red-500 px-4 py-2 rounded-md capitalize cursor-pointer text-md "
