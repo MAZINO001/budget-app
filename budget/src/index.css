@@ -12,15 +12,14 @@ body {
 
 
 .mobileSidebar {
-    background-color: #000;
+    background-color: #9a9999;
     position: fixed;
-    bottom: 15px;
+    bottom: 10px;
     left: 50%;
     right: 50%;
     transform: translateX(-50%);
     width: 85%;
-    /* height: 10%; */
-    height: 50px;
+    height: 45px;
     padding: 5px 20px;
     border-radius: 50px;
     z-index: 100;
@@ -128,4 +127,22 @@ label {
     border-radius: 0.375rem;
     padding: 1rem;
     font-size: 1.125rem;
+}
+
+.stickyTopbar {
+    position: sticky;
+    top: 54px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1112;
+}
+
+.stickySidebar {
+    position: sticky;
+    top: 8.5px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1112;
 }

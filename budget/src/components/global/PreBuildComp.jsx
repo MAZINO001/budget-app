@@ -7,14 +7,14 @@ import Data from "../../Data/fakeData.json";
 
 export function Rnage() {
   const [selectedCity, setSelectedCity] = useState(null);
-  const cities = [{ range: "Month" }, { range: "Week" }, { range: "Day" }];
+  const ranges = [{ range: "Month" }, { range: "Week" }, { range: "Day" }];
 
   return (
     <div className="card flex justify-content-center ">
       <Dropdown
         value={selectedCity}
         onChange={(e) => setSelectedCity(e.value)}
-        options={cities}
+        options={ranges}
         optionLabel="range"
         placeholder="Month"
         className="w-[7.6rem] h-[33px] flex items-center  text-white"

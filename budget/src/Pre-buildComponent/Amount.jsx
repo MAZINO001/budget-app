@@ -27,25 +27,24 @@ export default function Amount() {
   const [localSource, setLocalSource] = useState("");
   const [isActive, setIsActive] = useState(false);
 
-  const handleValueChange = (e) => {
-    const newValue = e.value;
-    setLocalAmount(newValue);
+  const handleValueChange = () => { 
     dispatch(
       updateAmount({
-        amount: newValue,
+        amount: localAmount,
         source: localSource.name,
       })
     );
 
     const newAmount = {
-      amount: newValue, // Corrected line
+      amount: localAmount, // Corrected line
       source: localSource.name,
     };
     const existingAmount = JSON.parse(localStorage.getItem("amount")) || [];
     const updatedAmount = [...existingAmount, newAmount];
     localStorage.setItem("amount", JSON.stringify(updatedAmount));
-    console.log(newValue);
+    console.log(localAmount);
     console.log(localSource.name);
+    togglePanel();
   };
 
   const togglePanel = () => {
@@ -68,7 +67,7 @@ export default function Amount() {
             </label>
             <InputNumber
               value={localAmount}
-              onValueChange={handleValueChange}
+              onValueChange={(e) => setLocalAmount(e.value)}
               placeholder="$0.00"
               mode="currency"
               currency="USD"
@@ -107,7 +106,7 @@ export default function Amount() {
           <div className="flex gap-4">
             <button
               className="bg-red-500 px-4 py-2 rounded-md capitalize cursor-pointer text-md"
-              onClick={togglePanel}
+              onClick={handleValueChange}
             >
               Save
             </button>

@@ -12,20 +12,20 @@ export default function TopBar() {
     return dateB - dateA;
   });
   const lastTransaction = sortedData[0];
-
+  //stickyTopbar add this when oly the smal screen
   return (
     <div className=" w-full h-[50px] flex justify-between items-center px-2 py-2 ">
       <div className=" w-[180px] md:w-[253px] text-sm md:text-md h-[33px] bg-gray-700 flex items-center justify-center rounded-md  p-1">
         <span>
-          {lastTransaction.Description} : {lastTransaction.Amount} $
+          {lastTransaction.Category} : {lastTransaction.Amount} $
         </span>
       </div>
-      <div className="flex items-center gap-4 ">
+      <div className="flex items-center gap-2 ">
         <div className=" ml-4 flex items-center gap-4 rounded-md bg-gray-700 ">
           <Rnage />
         </div>
         <div
-          className="relative mr-2 md:mr-0"
+          className="relative mr-2 md:mr-0 "
           onClick={() => setPopUp((state) => !state)}
         >
           <span className="absolute bottom-4 left-4">
