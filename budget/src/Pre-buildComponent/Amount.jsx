@@ -52,6 +52,8 @@ export default function Amount() {
     localStorage.setItem("amount", JSON.stringify(existingAmount));
 
     togglePanel();
+    setLocalAmount("");
+    setLocalSource("");
   };
 
   const togglePanel = () => {

@@ -63,6 +63,8 @@ export default function Budget() {
     const updatedBudget = [...existingBudget, newBudget];
     localStorage.setItem("budget", JSON.stringify(updatedBudget));
     togglepanel();
+    setLocalBudget("")
+    setlocalCategory("")
   };
 
   const categoryOptionTemplate = (option) => (

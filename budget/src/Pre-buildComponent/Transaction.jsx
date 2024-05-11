@@ -106,6 +106,10 @@ export default function Transaction() {
     const updatedTransactions = [...existingTransactions, newTransaction];
     localStorage.setItem("transactions", JSON.stringify(updatedTransactions));
     togglepanel();
+    setLocalTransaction("");
+    setLocalDescription("");
+    setLocalPayee("");
+    setLocalCategory("");
   };
 
   const togglepanel = () => {

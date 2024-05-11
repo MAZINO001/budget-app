@@ -56,6 +56,9 @@ export default function Savings() {
     const updatedSavings = [...existingSavings, newSavings];
     localStorage.setItem("savings", JSON.stringify(updatedSavings));
     togglePanel();
+    setLocalSaving("");
+    setLocalDescription("");
+    setLocalGoal("");
   };
 
   const togglePanel = () => {
