@@ -1,23 +1,29 @@
 import { VirtualScroller } from "primereact/virtualscroller";
 import { classNames } from "primereact/utils";
-import Data from "../Data/fakeData.json";
+// import Data from "../Data/fakeData.json";
 
 export default function PopularComp() {
-  const top10Items = Data.sort((a, b) => b.Amount - a.Amount).slice(0, 10);
+  const existingTransactions =
+    JSON.parse(localStorage.getItem("transactions")) ?? [];
+
+  const top10Items = existingTransactions
+    .sort((a, b) => b.transaction - a.transaction)
+    .slice(0, 10);
 
   const items = top10Items.map((item, index) => (
-    <div
-      key={index}
-      className="flex items-center justify-between w-full px-2 ">
-      <span>{item.Category}</span>
-      <span>{item.Amount}$</span>
+    <div key={index} className="flex items-center justify-between w-full px-2 ">
+      <span>{item.category}</span>
+      <span>{item.transaction}$</span>
     </div>
   ));
 
   const itemTemplate = (item, options) => {
-    const className = classNames("flex items-center p-2 bg-gray-600 mb-2 rounded-md", {
-      "surface-hover": options.odd,
-    });
+    const className = classNames(
+      "flex items-center p-2 bg-gray-600 mb-2 rounded-md",
+      {
+        "surface-hover": options.odd,
+      }
+    );
 
     return (
       <div

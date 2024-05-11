@@ -28,8 +28,9 @@ import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 
 export default function HistoryPreBiuld1() {
-  const [transactions, setTransactions] = useState(Data);
-
+  const existingTransactions =
+    JSON.parse(localStorage.getItem("transactions")) ?? [];
+  const [transactions, setTransactions] = useState(existingTransactions);
   return (
     <div className="card " style={{ backgroundColor: "#000" }}>
       <DataTable
@@ -40,7 +41,7 @@ export default function HistoryPreBiuld1() {
         }}
       >
         <Column
-          field="Category"
+          field="category"
           header="Category"
           sortable
           className="bg-gray-600 text-white "
@@ -48,7 +49,7 @@ export default function HistoryPreBiuld1() {
           headerStyle={{ backgroundColor: " rgb(55 65 81)", color: "#fff" }}
         ></Column>
         <Column
-          field="Date"
+          field="date"
           header="Date"
           sortable
           className="bg-gray-600 text-white"
@@ -56,15 +57,7 @@ export default function HistoryPreBiuld1() {
           headerStyle={{ backgroundColor: " rgb(55 65 81)", color: "#fff" }}
         ></Column>
         <Column
-          field="Date"
-          header="Date"
-          sortable
-          className="bg-gray-600 text-white"
-          style={{ width: "20%" }}
-          headerStyle={{ backgroundColor: " rgb(55 65 81)", color: "#fff" }}
-        ></Column>
-        <Column
-          field="Time"
+          field="time"
           header="Time"
           sortable
           className="bg-gray-600 text-white"
@@ -72,7 +65,15 @@ export default function HistoryPreBiuld1() {
           headerStyle={{ backgroundColor: " rgb(55 65 81)", color: "#fff" }}
         ></Column>
         <Column
-          field="Amount"
+          field="payee"
+          header="Payee"
+          sortable
+          className="bg-gray-600 text-white"
+          style={{ width: "20%" }}
+          headerStyle={{ backgroundColor: " rgb(55 65 81)", color: "#fff" }}
+        ></Column>
+        <Column
+          field="transaction"
           header="Amount"
           sortable
           className="bg-gray-600 text-white"

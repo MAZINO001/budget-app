@@ -27,7 +27,7 @@ export default function Amount() {
   const [localSource, setLocalSource] = useState("");
   const [isActive, setIsActive] = useState(false);
 
-  const handleValueChange = () => { 
+  const handleValueChange = () => {
     dispatch(
       updateAmount({
         amount: localAmount,
@@ -39,9 +39,18 @@ export default function Amount() {
       amount: localAmount, // Corrected line
       source: localSource.name,
     };
+
     const existingAmount = JSON.parse(localStorage.getItem("amount")) || [];
-    const updatedAmount = [...existingAmount, newAmount];
-    localStorage.setItem("amount", JSON.stringify(updatedAmount));
+    const index = existingAmount.findIndex(
+      (item) => item.source === localSource.name
+    );
+    if (index !== -1) {
+      existingAmount[index].amount = localAmount;
+    } else {
+      existingAmount.push(newAmount);
+    }
+    localStorage.setItem("amount", JSON.stringify(existingAmount));
+
     togglePanel();
   };
 
