@@ -1,11 +1,12 @@
-import Layout from "./components/scene/Layout";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Layout from "./components/scene/Layout";
 import Dashboard from "./components/pages/Dashboard";
 import AddNew from "./components/pages/AddNew";
 import History from "./components/pages/History";
 import Tools from "./components/pages/Tools";
 import Settings from "./components/pages/Settings";
 import ErrorPage from "./components/global/ErrorPage";
+
 const router = createBrowserRouter([
   {
     path: "/",
