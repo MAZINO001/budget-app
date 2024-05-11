@@ -42,8 +42,6 @@ export default function Amount() {
     const existingAmount = JSON.parse(localStorage.getItem("amount")) || [];
     const updatedAmount = [...existingAmount, newAmount];
     localStorage.setItem("amount", JSON.stringify(updatedAmount));
-    console.log(localAmount);
-    console.log(localSource.name);
     togglePanel();
   };
 

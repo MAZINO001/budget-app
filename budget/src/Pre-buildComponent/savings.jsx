@@ -36,17 +36,26 @@ export default function Savings() {
     return `${formattedStartDate} - ${formattedEndDate}`;
   };
 
-  const handleValueChange = (e) => {
-    const newValue = e.value;
-    setLocalSaving(newValue);
+  const handleValueChange = () => {
     dispatch(
       updateSaving({
-        saving: newValue,
+        saving: localSaving,
         goal: LocalGoal,
         description: LocalDescription,
         date: formatDate(dates),
       })
     );
+
+    const newSavings = {
+      saving: localSaving,
+      goal: LocalGoal,
+      description: LocalDescription,
+      date: formatDate(dates),
+    };
+    const existingSavings = JSON.parse(localStorage.getItem("savings")) || [];
+    const updatedSavings = [...existingSavings, newSavings];
+    localStorage.setItem("savings", JSON.stringify(updatedSavings));
+    togglePanel();
   };
 
   const togglePanel = () => {
@@ -61,7 +70,7 @@ export default function Savings() {
           </label>
           <InputNumber
             value={localSaving}
-            onValueChange={handleValueChange}
+            onValueChange={(e) => setLocalSaving(e.value)}
             placeholder="$0.00"
             mode="currency"
             currency="USD"
@@ -122,7 +131,7 @@ export default function Savings() {
           <div className="flex gap-4">
             <button
               className="bg-red-500 px-4 py-2 rounded-md capitalize cursor-pointer text-md"
-              onClick={togglePanel}
+              onClick={handleValueChange}
             >
               Save
             </button>

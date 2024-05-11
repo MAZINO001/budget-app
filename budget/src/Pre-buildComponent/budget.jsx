@@ -47,15 +47,22 @@ export default function Budget() {
     setActive(!Active);
   };
 
-  const handleValueChange = (e) => {
-    const newValue = e.value;
-    setLocalBudget(newValue);
+  const handleValueChange = () => {
     dispatch(
       updateBudget({
-        budget: newValue,
+        budget: localBudget,
         category: localCategory.name,
       })
     );
+
+    const newBudget = {
+      amount: localBudget, // Corrected line
+      source: localCategory.name,
+    };
+    const existingBudget = JSON.parse(localStorage.getItem("budget")) || [];
+    const updatedBudget = [...existingBudget, newBudget];
+    localStorage.setItem("budget", JSON.stringify(updatedBudget));
+    togglepanel();
   };
 
   const categoryOptionTemplate = (option) => (
@@ -73,7 +80,7 @@ export default function Budget() {
           </label>
           <InputNumber
             value={localBudget}
-            onValueChange={handleValueChange}
+            onValueChange={(e) => setLocalBudget(e.value)}
             placeholder="$0.00"
             mode="currency"
             currency="USD"
@@ -111,7 +118,7 @@ export default function Budget() {
           <div className="flex gap-4">
             <button
               className="bg-red-500 px-4 py-2 rounded-md capitalize cursor-pointer text-md "
-              onClick={togglepanel}
+              onClick={handleValueChange}
             >
               save
             </button>
