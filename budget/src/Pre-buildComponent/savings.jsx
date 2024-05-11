@@ -59,6 +59,7 @@ export default function Savings() {
     setLocalSaving("");
     setLocalDescription("");
     setLocalGoal("");
+    setDates("");
   };
 
   const togglePanel = () => {
