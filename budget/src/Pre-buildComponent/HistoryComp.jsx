@@ -1,13 +1,13 @@
-// import Data from "../Data/fakeData.json";
 // import { VirtualScroller } from "primereact/virtualscroller";
 // import { classNames } from "primereact/utils";
 
 // export default function HistoryComp() {
-//   const items = Data.map((item, index) => (
+//   const existingTransactions = JSON.parse(localStorage.getItem("transactions")) ?? [];
+//   const items = existingTransactions.map((item, index) => (
 //     <div key={index} className="flex items-center justify-between w-full px-2">
-//       <span>{item.Category}</span>
-//       <span>{item.Time}</span>
-//       <span>{item.Amount}$</span>
+//       <span>{item.category}</span>
+//       <span>{item.time}</span>
+//       <span>{item.transaction}$</span>
 //     </div>
 //   ));
 
@@ -46,9 +46,12 @@ import { VirtualScroller } from "primereact/virtualscroller";
 import { classNames } from "primereact/utils";
 
 export default function HistoryComp() {
-  const existingTransactions = JSON.parse(localStorage.getItem("transactions")) ?? [];
-  // console.log(existingTransactions);
-  const items = existingTransactions.map((item, index) => (
+  const existingTransactions =
+    JSON.parse(localStorage.getItem("transactions")) ?? [];
+  const sortedexistingTransactions = existingTransactions.sort(
+    (a, b) => new Date(b.date) - new Date(a.date)
+  );
+  const items = sortedexistingTransactions.map((item, index) => (
     <div key={index} className="flex items-center justify-between w-full px-2">
       <span>{item.category}</span>
       <span>{item.time}</span>
