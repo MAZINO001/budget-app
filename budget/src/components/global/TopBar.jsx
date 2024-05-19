@@ -1,6 +1,6 @@
 import { GoBellFill } from "react-icons/go";
 import avatar from "../../assets/avatar.jpg";
-import { BadgeIcon, Rnage } from "./PreBuildComp";
+import { BadgeIcon } from "./PreBuildComp";
 import Data from "../../Data/fakeData.json";
 import { useState } from "react";
 export default function TopBar() {
@@ -21,9 +21,6 @@ export default function TopBar() {
         </span>
       </div>
       <div className="flex items-center gap-2 ">
-        <div className=" ml-4 flex items-center gap-4 rounded-md bg-gray-700 ">
-          <Rnage />
-        </div>
         <div
           className="relative mr-2 md:mr-0 "
           onClick={() => setPopUp((state) => !state)}
