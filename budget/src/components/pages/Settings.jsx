@@ -6,18 +6,16 @@ export default function Settings() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [active, setActive] = useState(false);
-  const [activeRe, setActiveRe] = useState(false);
 
   const togglePanel = () => {
     setActive(!active);
   };
 
-  const togglePanelRep = () => {
-    setActiveRe(!activeRe);
-  };
-
   const deleteAll = () => {
     localStorage.removeItem("amount");
+    localStorage.removeItem("transactions");
+    localStorage.removeItem("budget");
+    localStorage.removeItem("savings");
     togglePanel();
   };
 
@@ -57,7 +55,6 @@ export default function Settings() {
             onChange={(e) => setPassword(e.target.value)}
             className="w-[350px] h-[50px]"
             placeholder="Password"
-            feedback={false}
           />
         </div>
       </div>
@@ -68,7 +65,7 @@ export default function Settings() {
         </button>
         <button
           className="bg-gray-700 rounded-md h-[50px] w-[166px]"
-          onClick={togglePanelRep}
+          onClick={togglePanel}
         >
           Reset App
         </button>
