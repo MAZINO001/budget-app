@@ -2,9 +2,9 @@
 /* eslint-disable react/prop-types */
 import "primereact/resources/themes/tailwind-light/theme.css";
 import { Dropdown } from "primereact/dropdown";
-import { useState } from "react";
+import React, { useState } from "react";
 import Data from "../../Data/fakeData.json";
-
+import { ProgressBar } from "primereact/progressbar";
 
 /************************* history ****************************/
 
@@ -79,4 +79,26 @@ export function BadgeIcon() {
     </div>
   );
 }
-//the bill popup
+//progress bar  for savings
+const existingSavings = JSON.parse(localStorage.getItem("savings")) || [];
+// const savingGoal = existingSavings[0].saving;
+
+export function SavingsBar() {
+  const valueTemplate = (value) => {
+    return (
+      <React.Fragment>
+        {value}/<b>100</b>
+      </React.Fragment>
+    );
+  };
+
+  return (
+    <div className="card ">
+      <ProgressBar
+        value={70}
+        displayValueTemplate={valueTemplate}
+        className="w-[314px] h-[33px] bg-gray-700 "
+      ></ProgressBar>
+    </div>
+  );
+}

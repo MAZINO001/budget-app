@@ -8,10 +8,10 @@ export default function Dashboard() {
     <div className="flex flex-col w-full md:mx-0 px-2  mb-16">
       <div className="flex items-center  md:gap-2 mb-2  flex-col  md:flex-row ">
         <div className="flex md:flex-col flex-row gap-2 md:gap-0 w-[100%] md:w-[30%] max-w-[600px] md:max-w-none">
-          <div className="bg-red-500 md:w-[100%] w-[50%] h-[120px]  mb-2 rounded-md z-50">
+          <div className=" md:w-[100%] w-[50%] h-[120px]  mb-2 rounded-md z-50">
             <CreditCard1 />
           </div>
-          <div className="bg-red-500 md:w-[100%] w-[50%] h-[120px] rounded-md z-50">
+          <div className=" md:w-[100%] w-[50%] h-[120px] rounded-md z-50">
             <CreditCard2 />
           </div>
         </div>

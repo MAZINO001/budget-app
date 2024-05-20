@@ -1,5 +1,8 @@
 /********************************** custome code************************************/
 import Data from "../../Data/fakeData.json";
+const existingTransactions =
+  JSON.parse(localStorage.getItem("transactions")) || [];
+console.log(existingTransactions.category);
 const sortedData = Data.sort((a, b) => b.Amount - a.Amount);
 const top5MostExpensiveItems = sortedData.slice(0, 6);
 const mostExpensiveAmount = top5MostExpensiveItems.map((item) => item.Amount);
@@ -8,8 +11,8 @@ const mostExpensiveCategories = top5MostExpensiveItems.map(
 );
 const MonthlyAmount = 2000;
 //area chart
-const areaDataCurrMonth = [1000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-const areaDataPrevMonth = [1500, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+const areaDataCurrMonth = [0, 0, 0, 0, 1000, 0, 0, 0, 0, 0, 0, 0];
+const areaDataPrevMonth = [0, 0, 0, 0, 1500, 0, 0, 0, 0, 0, 0, 0];
 const areaCategories = [
   "January",
   "February",

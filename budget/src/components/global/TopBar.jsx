@@ -1,23 +1,16 @@
 import { GoBellFill } from "react-icons/go";
 import avatar from "../../assets/avatar.jpg";
-import { BadgeIcon } from "./PreBuildComp";
-import Data from "../../Data/fakeData.json";
+import { BadgeIcon, SavingsBar } from "./PreBuildComp";
 import { useState } from "react";
 export default function TopBar() {
   const [PopUp, setPopUp] = useState(false);
 
-  const sortedData = Data.sort((a, b) => {
-    const dateA = new Date(`${a.Date} ${a.Time}`);
-    const dateB = new Date(`${b.Date} ${b.Time}`);
-    return dateB - dateA;
-  });
-  const lastTransaction = sortedData[0];
-  //stickyTopbar add this when oly the smal screen
   return (
     <div className=" w-full h-[50px] flex justify-between items-center px-2 py-2 ">
-      <div className=" w-[180px] md:w-[253px] text-sm md:text-md h-[33px] bg-gray-700 flex items-center justify-center rounded-md  p-1">
+      {/* <div className=" w-[180px] md:w-[253px] text-sm md:text-md h-[33px] bg-gray-700 flex items-center justify-center rounded-md  p-1"> */}
+      <div className=" ">
         <span>
-          {lastTransaction.Category} : {lastTransaction.Amount} $
+          <SavingsBar />
         </span>
       </div>
       <div className="flex items-center gap-2 ">
