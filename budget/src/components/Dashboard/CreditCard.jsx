@@ -57,7 +57,7 @@ export function CreditCard2() {
         alt="Card logo"
       />
       <div className="absolute top-2 left-2 ">
-        <h3 className="text-md mb-1 ">Amount : </h3>
+        <h3 className="text-md mb-1 ">Spending : </h3>
         <span className="text-3xl tracking-widest">{totalSpending}$</span>
       </div>
       <div className="absolute bottom-2 text-sm left-2 md:text-md">

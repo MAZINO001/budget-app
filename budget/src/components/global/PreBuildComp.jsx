@@ -80,25 +80,23 @@ export function BadgeIcon() {
   );
 }
 //progress bar  for savings
+
 const existingSavings = JSON.parse(localStorage.getItem("savings")) || [];
-// const savingGoal = existingSavings[0].saving;
+const savingGoal = existingSavings[0].saving;
 
 export function SavingsBar() {
-  const valueTemplate = (value) => {
-    return (
-      <React.Fragment>
-        {value}/<b>100</b>
-      </React.Fragment>
-    );
-  };
+  const value = 50;
+  const maxValue = savingGoal;
+  const percentage = (value / maxValue) * 100;
 
   return (
-    <div className="card ">
-      <ProgressBar
-        value={70}
-        displayValueTemplate={valueTemplate}
-        className="w-[314px] h-[33px] bg-gray-700 "
-      ></ProgressBar>
+    <div className="w-full bg-gray-700 rounded-md h-[33px] overflow-hidden font-bold tracking-wider ">
+      <div
+        className="bg-red-500 h-full  text-center p-1 text-white text-canter"
+        style={{ width: `${percentage}%` }}
+      >
+        {value}/{maxValue}
+      </div>
     </div>
   );
 }

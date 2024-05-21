@@ -20,7 +20,7 @@ export default function Settings() {
   };
 
   return (
-    <div className="mx-2 mt-2">
+    <div className="mx-2 mt-2 mb-16 md:mb-0">
       <div className="flex flex-col gap-y-4 mb-4">
         {/* Username */}
         <div className="flex items-center justify-start gap-4">
@@ -94,6 +94,8 @@ export default function Settings() {
           </div>
         </div>
       )}
+
+      {/* testing area */}
     </div>
   );
 }
