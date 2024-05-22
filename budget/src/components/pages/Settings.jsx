@@ -1,6 +1,7 @@
 import { InputText } from "primereact/inputtext";
 import profilePicture from "../../assets/avatar.jpg";
 import { useState } from "react";
+import PrintEveryMinute from "../../Data/testing";
 
 export default function Settings() {
   const [username, setUsername] = useState("");
@@ -95,6 +96,8 @@ export default function Settings() {
         </div>
       )}
 
+      {/* testing area */}
+      <PrintEveryMinute />
       {/* testing area */}
     </div>
   );
